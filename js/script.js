@@ -1,48 +1,4 @@
 (function($){
-  //language-markup
-  // .ruby 
-  // .xml 
-  // .html
-  // .css
-  // .python
-  // .perl
-  // .javascript .title
-  // .coffeescript
-  
-  // var languageArr = ['javascript', 'css', 'html', 'scss', 'yml'];
-
-  var key = 'highlight';
-
-  $('.highlight').each(function() {
-      var $this = $(this),
-          className = $this.attr('class');
-      var index = className.indexOf(key);
-      if ( index != -1) {
-        var language = className.slice(index + key.length );
-        // $this.attr('rel', language.toUpperCase());  
-        $this.wrap("<div class='highlight-wrap' rel=" + language.toUpperCase()+ "></div>");
-      }
-      // for(index in languageArr) {
-        // $this.attr('rel', languageArr[index].toUpperCase());
-        // if (className.indexOf(languageArr[index]) != -1) {
-          // $this.attr('rel', languageArr[index].toUpperCase());
-          // break;
-        // }
-      // }
-  });
-  
-  var revealHeight = 100;
-  var revealHeader = function(event) {
-    var scrollHeight = $(this).scrollTop();
-    if (scrollHeight >= revealHeight) {
-      $('#header').addClass('disperse');
-    }else {
-      $('#header').removeClass('disperse');
-    }
-  }
-  $(window).on('scroll', revealHeader);
-  revealHeader();
-
   // Search
   var $searchWrap = $('#search-form-wrap'),
     isSearchAnim = false,
@@ -83,13 +39,13 @@
 
     var $this = $(this),
       url = $this.attr('data-url'),
-      title = $this.attr('data-title'),
       encodedUrl = encodeURIComponent(url),
       id = 'article-share-box-' + $this.attr('data-id'),
       offset = $this.offset();
 
     if ($('#' + id).length){
       var box = $('#' + id);
+
       if (box.hasClass('on')){
         box.removeClass('on');
         return;
@@ -99,20 +55,14 @@
         '<div id="' + id + '" class="article-share-box">',
           '<input class="article-share-input" value="' + url + '">',
           '<div class="article-share-links">',
-            '<a href="http://service.weibo.com/share/share.php?url=' + encodedUrl + '&title=' + title  + '&language=zh_cn" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-            '<a href="http://share.renren.com/share/buttonshare.do?link=' + encodedUrl + '&title=' + title + '" class="article-share-renren" target="_blank" title="Renren"></a>',
-            '<a href="http://tieba.baidu.com/i/app/open_share_api?link=' + encodedUrl + '&title=' + title + '" class="article-share-baidu" target="_blank" title="baidu"></a>',
+            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
             '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-            // '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-            // '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-            // '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-weibo" target="_blank" title="Weibo"></a>',
           '</div>',
         '</div>'
       ].join('');
-      // '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-      // '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-      // '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-      // 
+
       var box = $(html);
 
       $('body').append(box);
@@ -177,10 +127,6 @@
     startMobileNavAnim();
     $container.toggleClass('mobile-nav-on');
     stopMobileNavAnim();
-  });
-
-  $('#mobile-nav').on('click', function(){
-    $container.toggleClass('mobile-nav-on');
   });
 
   $('#wrap').on('click', function(){
