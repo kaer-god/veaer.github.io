@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>关于Activity | Veaer</title>
+  <title>一个开源项目float_text | Veaer</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -227,8 +227,8 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2015-10-02T16:00:00.000Z" itemprop="datePublished">
-          2015-10-03
+      <time datetime="2015-10-12T16:00:00.000Z" itemprop="datePublished">
+          2015-10-13
       </time>
     
     
@@ -237,48 +237,32 @@
     
     
 </span>
-                <h1>关于Activity</h1>
+                <h1>一个开源项目float_text</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h2 id="Activity的生命周期">Activity的生命周期</h2><p>这个话题太常见了，随便谷歌一下就能看到一大堆答案</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st=&#62;start: Activity&#21551;&#21160;&#10;e=&#62;end: Activity&#38144;&#27585;&#10;create=&#62;operation: onCreate&#10;start=&#62;operation: onStart(&#26410;&#26174;&#31034;)&#10;resume=&#62;operation: onResume(&#24050;&#32463;&#26174;&#31034;)&#10;pause=&#62;operation: onPause&#10;stop=&#62;operation: onStop&#10;destory=&#62;operation: onDestory&#10;&#10;&#10;st-&#62;create-&#62;start-&#62;resume-&#62;pause-&#62;stop-&#62;destory-&#62;e</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>onCreate():不需要过多解释，这个阶段是activity刚刚建立，一般用来做布局文件的加载，以及数据的初始化<br>Called when the activity is starting.  This is where most initialization</li>
-<li>onStart():Activity已经准备好，只是暂时不可见<br>Called when the activity is becoming visible to the user</li>
-<li>onResume():Activity即将从不可见变为可见<br>Called when the activity will start interacting with the user</li>
-<li>onPause():Activity将要开始停止，有一种极端情况，就是Activity在这这一阶段的时候迅速再切回屏幕，本Activity将再调用 onResume方法，这个阶段可以做一些保存状态的动作，但不能太耗时<br>Called when the system is about to start resuming a previous activity</li>
-<li>onStop():Activity即将停止，这个阶段可以做一些保存状态的动作，但不能太耗时<br>Called when the activity is no longer visible to the user, because another activity has been resumed and is covering this one<br>onDestory():Activity即将被销毁，在这一阶段可以做一些资源回收的操作<br>The final call you receive before your activity is destroyed</li>
-</ul>
-</blockquote>
-<p>其实Activity的生命周期远不止这些，还有</p>
-<ul>
-<li><p>onPostCreate()（Called when activity start-up is complete (after onStart() and onRestoreInstanceState(Bundle) have been called))</p>
-</li>
-<li><p>onPostResume()（Called when activity resume is complete）等等</p>
-</li>
-</ul>
-<p>真实开发过程中用到的不是很多，当然，每个人的业务需求都不一样，整清楚生命周期才是重要的。：）</p>
-
+      		<p>在注册、登录以及一些表单填写的时候，会下意识地做一些动态效果上去，就像：</p>
+<p><img src="http://77fkpo.com5.z0.glb.clouddn.com/46aed824f870cb3b8747a7c6d2d0bd85.jpg" width="400" height="300"></p>
+<p>在谷歌还没发布design包之前，在github上有一个类似的开源库<a href="https://github.com/wrapp/floatlabelededittext" target="_blank" rel="external">floatlabelededittext</a></p>
+<p>当然，design包为我们解决了这个实现</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.TextInputLayout</span></span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"wrap_content"</span>&gt;</span><br><span class="line">        &lt;EditText</span><br><span class="line">            android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">            android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line">            android:hint=<span class="string">"帐号"</span>/&gt;</span><br><span class="line">&lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.TextInputLayout</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>它实现的效果如图：</p>
+<p><img src="http://77fkpo.com5.z0.glb.clouddn.com/27aa9fe783967b1c457f76877f859e73.gif" width="360" height="640"></p>
+<h2 id="Can_everything_be_simple-">Can everything be simple.</h2>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="pagination" role="pagination">
     
-    <a class="pull-left" href="/2015/10/13/15.10.13float_text/" style="float: left;">
-        ← 一个开源项目float_text
-    </a>
     
-    
-    <a class="pull-right" href="/2015/08/04/15.08.04mark_down/">
-        Markdown介绍 →
+    <a class="pull-right" href="/2015/10/03/15.10.03activity/">
+        关于Activity →
     </a>
     
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2015/10/03/15.10.03activity/" data-title="关于Activity" data-url="http://cheduzi.wang/2015/10/03/15.10.03activity/"></div>
+<div class="ds-thread" data-thread-key="2015/10/13/15.10.13float_text/" data-title="一个开源项目float_text" data-url="http://cheduzi.wang/2015/10/13/15.10.13float_text/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"veaerblog"};
 (function() {
