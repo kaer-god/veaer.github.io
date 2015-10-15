@@ -1,247 +1,132 @@
-<!DOCTYPE html>
-<!--[if lte IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--
-***************  *      *     *
-      8          *    *       *
-      8          *  *         *
-      8          **           *
-      8          *  *         *
-      8          *    *       *
-      8          *      *     *
-      8          *        *   ***********
--->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<!--<![endif]-->
-
-<head>
-  <title>Markdown介绍 | Veaer</title>
-  <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Veaer">
-    <meta name="author" content="Veaer">
-    <meta name="description" content="王小二的栖身之所" />
-    <meta name="keywords" content="" />
-
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/v_ico.ico" type="image/ico">
-
-    <link rel="alternate" href="/atom.xml" title="Veaer" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-	
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
-    
-
-    <!-- Custom stylesheet, (add custom styles here, always load last) -->
-    <!-- Load our stylesheet for IE8 -->
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
-
-    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
-    <!--<link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
-    <!--<link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>-->
-
-    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
-    <!--[if IE]>
-    <!--<link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>-->
-    <!--<link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>-->
-    <!--<link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>-->
-    <!--<link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>-->
-    <![endif]-->
-
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
-
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <![endif]-->
-
-
-
-
-
-
-
-
-
-
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Veaer]]></title>
+  <subtitle><![CDATA[王小二的栖身之所]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://cheduzi.wang/"/>
+  <updated>2015-10-15T13:43:45.000Z</updated>
+  <id>http://cheduzi.wang/</id>
   
+  <author>
+    <name><![CDATA[Veaer]]></name>
+    
+  </author>
   
+  <generator uri="http://hexo.io/">Hexo</generator>
   
-
+  <entry>
+    <title><![CDATA[关于沉浸式状态栏]]></title>
+    <link href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/"/>
+    <id>http://cheduzi.wang/2015/10/15/15.10.15trans_head/</id>
+    <published>2015-10-14T16:00:00.000Z</published>
+    <updated>2015-10-15T13:43:45.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="在安卓4-4之后，谷歌提出了『沉浸式状态栏』这个说法">在安卓4.4之后，谷歌提出了『沉浸式状态栏』这个说法</h2><p>但是我觉得它实现的效果更像是单纯的全屏模式更像一些</p>
+<p>这里有篇文章<a href="http://blog.csdn.net/sdvch/article/details/44209959" target="_blank" rel="external">使用全屏沉浸模式（Using Immersive Full-Screen Mode）</a>来讲述利用setSystemUiVisibility()方法，实现『沉浸』的过程，我觉得这种『沉浸式』可以用来开发视频播放的Acivity，它和<code>android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;</code>的区别好像就在于前者的触摸操作会退出全屏</p>
+<p><img src="http://77fkpo.com5.z0.glb.clouddn.com/e051c31ac90cfc41c60c81fb11020e83.png" width="400" height="200"></p>
+<h2 id="在安卓5-0之后，可以通过设置主题来完成『沉浸式』的效果">在安卓5.0之后，可以通过设置主题来完成『沉浸式』的效果</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;  </span><br><span class="line">  &lt;!<span class="comment">-- inherit from the material theme --&gt;  </span></span><br><span class="line">  &lt;style <span class="property">name</span>=<span class="string">"AppTheme"</span> parent=<span class="string">"android:Theme.Material"</span>&gt;  </span><br><span class="line">    &lt;!<span class="comment">-- Main theme colors --&gt;  </span></span><br><span class="line">    &lt;!<span class="comment">--   your app's branding color (for the app bar) --&gt;  </span></span><br><span class="line">    &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:colorPrimary"</span>&gt;@color/primary&lt;/<span class="property">item</span>&gt;  </span><br><span class="line">    &lt;!<span class="comment">--   darker variant of colorPrimary (for status bar, contextual app bars) --&gt;  </span></span><br><span class="line">    &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:colorPrimaryDark"</span>&gt;@color/primary_dark&lt;/<span class="property">item</span>&gt;  </span><br><span class="line">    &lt;!<span class="comment">--   theme UI controls like checkboxes and text fields --&gt;  </span></span><br><span class="line">    &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:colorAccent"</span>&gt;@color/accent&lt;/<span class="property">item</span>&gt;  </span><br><span class="line">  &lt;/style&gt;  </span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure>
+<p>关于那几个参数，可以用一张图来标识</p>
+<p><img src="http://images.cnitblog.com/blog/651487/201411/071629282842265.png" width="180" height="320"></p>
+<p>还有<code>&lt;item name=&quot;android:colorAccent&quot;&gt;#00FF00&lt;/item&gt;</code>用来设置一些奇奇怪怪的地方的颜色。。。例如checkbox神马的。。。</p>
+<p><img src="http://images.cnitblog.com/blog/651487/201411/071655233623279.jpg" width="357" height="131"></p>
+<p>然而这样像是定义了一个『主旋律』，类似知乎这种主题为蓝色的App,每个页面的顶部状态栏都设置为蓝色，也不会有违和感，可是假如你的几个页面的主题色差的有点大(就像红配绿)，就会不是那么好看了，毕竟做沉浸式的初衷就是为了让App好看一点</p>
+<h2 id="我的黑科技">我的黑科技</h2><p>在BaseActivity的onCreate()方法中使用</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="params">(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT)</span> &#123;</span><br><span class="line">    getWindow<span class="params">()</span>.setFlags<span class="params">(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样你的App在4.4.4以上就可以从顶部开始布局了，你可以在rootView 上设置padding为状态栏的高度,就可以实现『沉浸式』的效果，但是在4.4.4以下就把padding去掉</p>
+<p>得到状态栏高度的方法</p>
+<ul>
+<li>第一种</li>
+</ul>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">private int getStatusBarHeight<span class="params">()</span> &#123;</span><br><span class="line">        int statusBarHeight = <span class="number">0</span>;</span><br><span class="line">        try &#123;</span><br><span class="line">            Class&lt;?&gt; c = Class.forName<span class="params">(<span class="string">"com.android.internal.R$dimen"</span>)</span>;</span><br><span class="line">            Object o = c.newInstance<span class="params">()</span>;</span><br><span class="line">            Field field = c.getField<span class="params">(<span class="string">"status_bar_height"</span>)</span>;</span><br><span class="line">            int x = <span class="params">(Integer)</span> field.get<span class="params">(o)</span>;</span><br><span class="line">            statusBarHeight = getResources<span class="params">()</span>.getDimensionPixelSize<span class="params">(x)</span>;</span><br><span class="line">        &#125; catch <span class="params">(Exception e)</span> &#123;</span><br><span class="line">            e.printStackTrace<span class="params">()</span>;</span><br><span class="line">            Rect frame = new Rect<span class="params">()</span>;</span><br><span class="line">            getWindow<span class="params">()</span>.getDecorView<span class="params">()</span>.getWindowVisibleDisplayFrame<span class="params">(frame)</span>;</span><br><span class="line">            statusBarHeight = frame.top;</span><br><span class="line">        &#125;</span><br><span class="line">        return statusBarHeight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二种</li>
+</ul>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private <span class="type">int</span> getStatusBarHeight() &#123;</span><br><span class="line">            <span class="type">int</span> <span class="literal">result</span> = <span class="number">0</span>;</span><br><span class="line">            <span class="type">int</span> resourceId = getResources().getIdentifier(<span class="string">"status_bar_height"</span>, <span class="string">"dimen"</span>, <span class="string">"android"</span>);</span><br><span class="line">            <span class="keyword">if</span> (resourceId &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="literal">result</span> = res.getDimensionPixelSize(resourceId);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>不过，信我的，25dp。</p>
+<p>还有在版本19以下和以上区别高度，我是这么做的</p>
+<p>values 文件夹下的 dimens.xml 中定义 padding 为0，values-v19文件夹下单 dimens.xml 中定义为25dp，世界清净了。</p>
+<h2 id="Everything_can_be_simple-">Everything can be simple.</h2>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="在安卓4-4之后，谷歌提出了『沉浸式状态栏』这个说法">在安卓4.4之后，谷歌提出了『沉浸式状态栏』这个说法</h2><p>但是我觉得它实现的效果更像是单纯的全屏模式更像一些</p>
+<p>这里有篇文章<a href="http://blog.csdn.net/s]]>
+    </summary>
+    
+      <category term="Android" scheme="http://cheduzi.wang/tags/Android/"/>
+    
+      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+    
+  </entry>
   
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
-</head>
-
-<!--
-<body class="post-template">
--->
-<body id="index" class="lightnav animsition">
-
-      <!-- ============================ Off-canvas navigation =========================== -->
-
-    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
-        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
-            <img src="/img/close.png" alt="Close"/>
-        </div>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
-            <!-- Dropdown Menu -->
-			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="http://www.hitour.cc" target="_BLANK" class="animsition-link">玩途</a></li>
-                    
-                </ul>
-            </li>
-            
-            
-        	<li>
-        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
-            	<ul class="sb-submenu">
-				  	
-				    <li><a href="/categories/Android/" class="animsition-link">Android<small>(2)</small></a></li>
-				    
-				    <li><a href="/categories/Markdown/" class="animsition-link">Markdown<small>(1)</small></a></li>
-				    
-				</ul>
-        	</li>
-			
-            
-            <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                    <li><a href="http://xiuweikang.github.io/" class="animsition-link">Kevin</a></li>
-                    
-                </ul>
-            </li>
-            
-        </ul>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu secondary">
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
-        </ul>
-    </div>
+  <entry>
+    <title><![CDATA[一个开源项目float_text]]></title>
+    <link href="http://cheduzi.wang/2015/10/13/15.10.13float_text/"/>
+    <id>http://cheduzi.wang/2015/10/13/15.10.13float_text/</id>
+    <published>2015-10-12T16:00:00.000Z</published>
+    <updated>2015-10-15T08:21:17.000Z</updated>
+    <content type="html"><![CDATA[<p>在注册、登录以及一些表单填写的时候，会下意识地做一些动态效果上去，就像：</p>
+<p><img src="http://77fkpo.com5.z0.glb.clouddn.com/46aed824f870cb3b8747a7c6d2d0bd85.jpg" width="400" height="300"></p>
+<p>在谷歌还没发布design包之前，在github上有一个类似的开源库<a href="https://github.com/wrapp/floatlabelededittext" target="_blank" rel="external">floatlabelededittext</a></p>
+<p>当然，design包为我们解决了这个实现</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.TextInputLayout</span></span><br><span class="line">        android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">        android:layout_height=<span class="string">"wrap_content"</span>&gt;</span><br><span class="line">        &lt;EditText</span><br><span class="line">            android:layout_width=<span class="string">"match_parent"</span></span><br><span class="line">            android:layout_height=<span class="string">"wrap_content"</span></span><br><span class="line">            android:hint=<span class="string">"帐号"</span>/&gt;</span><br><span class="line">&lt;/android<span class="class">.support</span><span class="class">.design</span><span class="class">.widget</span><span class="class">.TextInputLayout</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>它实现的效果如图：</p>
+<p><img src="http://77fkpo.com5.z0.glb.clouddn.com/27aa9fe783967b1c457f76877f859e73.gif" width="360" height="640"></p>
+<p>当然，前提是你已经引入了design包</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'com.android.support:design:22.2.0'</span></span><br></pre></td></tr></table></figure>
+<h2 id="Everything_can_be_simple-">Everything can be simple.</h2>]]></content>
+    <summary type="html">
+    <![CDATA[<p>在注册、登录以及一些表单填写的时候，会下意识地做一些动态效果上去，就像：</p>
+<p><img src="http://77fkpo.com5.z0.glb.clouddn.com/46aed824f870cb3b8747a7c6d2d0bd85.jpg" width="]]>
+    </summary>
     
-    <!-- ============================ END Off-canvas navigation =========================== -->
-
-    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
-
-    <div id="sb-site">
-        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-        <div id="navigation" class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <!-- Nav logo -->
-                    <div class="logo">
-                        <a href="/" title="Logo" class="animsition-link">
-                         <img src="/img/v_icon.png" alt="Logo" width="35px;"/> 
-                        </a>
-                    </div>
-                    <!-- // Nav logo -->
-                    <!-- Info-bar -->
-                    <nav>
-                        <ul class="nav">
-                            <li><a href="/" class="animsition-link">Veaer</a></li>
-                            <li class="nolink"><span>Always </span>Creative.</li>
-                            
-                            <li><a href="https://github.com/Veaer" title="Github" target="_blank"><i class="icon-github"></i></a></li>
-                            
-                            
-                            
-                            
-                            
-                            <li><a href="http://weibo.com/Veaer" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
-                            
-                            <li class="nolink"><span>Welcome!</span></li>
-                        </ul>
-                    </nav>
-                    <!--// Info-bar -->
-                </div>
-                <!-- // .container -->
-                <div class="learnmore sb-toggle-right">More</div>
-                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar before"></span>
-                <span class="icon-bar main"></span>
-                <span class="icon-bar after"></span>
-                </button>
-            </div>
-            <!-- // .navbar-inner -->
-        </div>
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-        <!-- ============================ Hero Image =========================== -->
-
-        <section id="hero" class="scrollme">
-            <div class="container-fluid element-img" style="background: url(http://77fkpo.com5.z0.glb.clouddn.com/be9c18b98da9732304b6d90d9804c2aa.jpg) no-repeat center center fixed;background-size: cover">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                            <div>
-                            	
-                                <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                                <p></p>
-				    			
-                                <h2></h2>
-                                <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-				    			
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- // .col-md-12 -->
-                </div>
-                <div class="herofade beige-dk"></div>
-            </div>
-        </section>
-
-        <!-- Height spacing helper -->
-        <div class="heightblock"></div>
-        <!-- // End height spacing helper -->
-
-        <!-- ============================ END Hero Image =========================== -->
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2015-08-03T16:00:00.000Z" itemprop="datePublished">
-          2015-08-04
-      </time>
+      <category term="Android" scheme="http://cheduzi.wang/tags/Android/"/>
     
+      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
     
-    | 
-    <a href='/tags/Markdown/'>Markdown</a>
+  </entry>
+  
+  <entry>
+    <title><![CDATA[关于Activity]]></title>
+    <link href="http://cheduzi.wang/2015/10/03/15.10.03activity/"/>
+    <id>http://cheduzi.wang/2015/10/03/15.10.03activity/</id>
+    <published>2015-10-02T16:00:00.000Z</published>
+    <updated>2015-10-13T12:37:20.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Activity的生命周期">Activity的生命周期</h2><p>这个话题太常见了，随便谷歌一下就能看到一大堆答案</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st=&#62;start: Activity&#21551;&#21160;&#10;e=&#62;end: Activity&#38144;&#27585;&#10;create=&#62;operation: onCreate&#10;start=&#62;operation: onStart(&#26410;&#26174;&#31034;)&#10;resume=&#62;operation: onResume(&#24050;&#32463;&#26174;&#31034;)&#10;pause=&#62;operation: onPause&#10;stop=&#62;operation: onStop&#10;destory=&#62;operation: onDestory&#10;&#10;&#10;st-&#62;create-&#62;start-&#62;resume-&#62;pause-&#62;stop-&#62;destory-&#62;e</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>onCreate():不需要过多解释，这个阶段是activity刚刚建立，一般用来做布局文件的加载，以及数据的初始化<br>Called when the activity is starting.  This is where most initialization</li>
+<li>onStart():Activity已经准备好，只是暂时不可见<br>Called when the activity is becoming visible to the user</li>
+<li>onResume():Activity即将从不可见变为可见<br>Called when the activity will start interacting with the user</li>
+<li>onPause():Activity将要开始停止，有一种极端情况，就是Activity在这这一阶段的时候迅速再切回屏幕，本Activity将再调用 onResume方法，这个阶段可以做一些保存状态的动作，但不能太耗时<br>Called when the system is about to start resuming a previous activity</li>
+<li>onStop():Activity即将停止，这个阶段可以做一些保存状态的动作，但不能太耗时<br>Called when the activity is no longer visible to the user, because another activity has been resumed and is covering this one<br>onDestory():Activity即将被销毁，在这一阶段可以做一些资源回收的操作<br>The final call you receive before your activity is destroyed</li>
+</ul>
+</blockquote>
+<p>其实Activity的生命周期远不止这些，还有</p>
+<ul>
+<li><p>onPostCreate()（Called when activity start-up is complete (after onStart() and onRestoreInstanceState(Bundle) have been called))</p>
+</li>
+<li><p>onPostResume()（Called when activity resume is complete）等等</p>
+</li>
+</ul>
+<p>真实开发过程中用到的不是很多，当然，每个人的业务需求都不一样，整清楚生命周期才是重要的。：）</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Activity的生命周期">Activity的生命周期</h2><p>这个话题太常见了，随便谷歌一下就能看到一大堆答案</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span ]]>
+    </summary>
     
+      <category term="Android" scheme="http://cheduzi.wang/tags/Android/"/>
     
-</span>
-                <h1>Markdown介绍</h1>
-            </div>
-        </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h1 id="Markdown_语法和_MWeb_写作使用说明">Markdown 语法和 MWeb 写作使用说明</h1><h2 id="Markdown_的设计哲学">Markdown 的设计哲学</h2><blockquote>
+      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Markdown介绍]]></title>
+    <link href="http://cheduzi.wang/2015/10/01/15.10.01mark_down/"/>
+    <id>http://cheduzi.wang/2015/10/01/15.10.01mark_down/</id>
+    <published>2015-09-30T16:00:00.000Z</published>
+    <updated>2015-10-15T14:15:59.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Markdown_语法和_MWeb_写作使用说明">Markdown 语法和 MWeb 写作使用说明</h1><h2 id="Markdown_的设计哲学">Markdown 的设计哲学</h2><blockquote>
 <p>Markdown 的目標是實現「易讀易寫」。<br>不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。<br>Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
 </blockquote>
 <a id="more"></a>
@@ -292,7 +177,7 @@
 <h2 id="链接">链接</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">email <span class="xml"><span class="tag">&lt;<span class="title">example@example.com</span>&gt;</span></span></span><br><span class="line">[<span class="link_label">GitHub</span>](<span class="link_url">http://github.com</span>)</span><br><span class="line">自动生成连接  <span class="xml"><span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">www.github.com</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#109;&#97;&#105;&#x6c;&#116;&#111;&#x3a;&#x65;&#120;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x40;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;">&#x65;&#120;&#x61;&#x6d;&#112;&#x6c;&#x65;&#x40;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#x40;&#101;&#x78;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#109;">&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#x40;&#101;&#x78;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用">区块引用</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某某说:</span><br><span class="line"><span class="blockquote">&gt; 第一行引用</span></span><br><span class="line"><span class="blockquote">&gt; 第二行费用文字</span></span><br></pre></td></tr></table></figure>
 <p><code>Control + B</code> 可插入Markdown语法。<br>效果如下：</p>
@@ -368,100 +253,18 @@
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p>[TOC]</p>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="pagination" role="pagination">
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Markdown_语法和_MWeb_写作使用说明">Markdown 语法和 MWeb 写作使用说明</h1><h2 id="Markdown_的设计哲学">Markdown 的设计哲学</h2><blockquote>
+<p>Markdown 的目標是實現「易讀易寫」。<br>不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。<br>Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
+</blockquote>]]>
     
-    <a class="pull-left" href="/2015/10/03/15.10.03activity/" style="float: left;">
-        ← 关于Activity
-    </a>
+    </summary>
     
+      <category term="Markdown" scheme="http://cheduzi.wang/tags/Markdown/"/>
     
-</nav>
-
-        <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2015/08/04/15.08.04mark_down/" data-title="Markdown介绍" data-url="http://cheduzi.wang/2015/08/04/15.08.04mark_down/"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"veaerblog"};
-(function() {
-	var ds = document.createElement('script');
-	ds.type = 'text/javascript';ds.async = true;
-	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	ds.charset = 'UTF-8';
-	(document.getElementsByTagName('head')[0] 
-	 || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script>
-</div>
-    </div>
-</section>
-
-
-      
-<!-- ============================ Footer =========================== -->
-
-<footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Veaer. All Rights Reserved.
-                </p>
-                <p>Don't worry, be Happy.</p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/Veaer" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="http://weibo.com/Veaer" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-</footer>
-
-<!-- ============================ END Footer =========================== -->
-      <!-- Load our scripts -->
-        
-<!-- Resizable 'on-demand' full-height hero -->
-<script type="text/javascript">
+      <category term="Markdown" scheme="http://cheduzi.wang/categories/Markdown/"/>
     
-    var resizeHero = function () {
-        var hero = $(".cover,.heightblock"),
-            window1 = $(window);
-        hero.css({
-            "height": window1.height()
-        });
-    };
-    
-    resizeHero();
-    
-    $(window).resize(function () {
-        resizeHero();
-    });
-</script>
-<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
-<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
-<script src="/js/scripts.js"></script><!-- Theme scripts -->
-
-<!-- Initiate flexslider plugin -->
-<script type="text/javascript">
-    $(document).ready(function($) {
-      $('.flexslider').flexslider({
-        animation: "fade",
-        prevText: "",
-        nextText: "",
-        directionNav: true
-      });
-    });
-</script>
-
-</body>
-</html>
+  </entry>
+  
+</feed>

@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives: 2015/8 | Veaer</title>
+  <title>关于沉浸式状态栏 | Veaer</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -77,6 +77,8 @@
 
   
   
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
   
 
   
@@ -84,7 +86,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -114,7 +116,7 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
-				    <li><a href="/categories/Android/" class="animsition-link">Android<small>(2)</small></a></li>
+				    <li><a href="/categories/Android/" class="animsition-link">Android<small>(3)</small></a></li>
 				    
 				    <li><a href="/categories/Markdown/" class="animsition-link">Markdown<small>(1)</small></a></li>
 				    
@@ -222,37 +224,80 @@
 
         <!-- ============================ END Hero Image =========================== -->
       
-
-
-<section id="services">
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2015/08/04/15.08.04mark_down/">Markdown介绍</a></h4>
-                            
-                            <p><time datetime="2015-08-03T16:00:00.000Z"><a href="/2015/08/04/15.08.04mark_down/">2015-08-04</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-10-14T16:00:00.000Z" itemprop="datePublished">
+          2015-10-15
+      </time>
+    
+    
+    | 
+    <a href='/tags/Android/'>Android</a>
+    
+    
+</span>
+                <h1>关于沉浸式状态栏</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="在安卓4-4之后，谷歌提出了『沉浸式状态栏』这个说法">在安卓4.4之后，谷歌提出了『沉浸式状态栏』这个说法</h2><p>但是我觉得它实现的效果更像是单纯的全屏模式更像一些</p>
+<p>这里有篇文章<a href="http://blog.csdn.net/sdvch/article/details/44209959" target="_blank" rel="external">使用全屏沉浸模式（Using Immersive Full-Screen Mode）</a>来讲述利用setSystemUiVisibility()方法，实现『沉浸』的过程，我觉得这种『沉浸式』可以用来开发视频播放的Acivity，它和<code>android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;</code>的区别好像就在于前者的触摸操作会退出全屏</p>
+<p><img src="http://77fkpo.com5.z0.glb.clouddn.com/e051c31ac90cfc41c60c81fb11020e83.png" width="400" height="200"></p>
+<h2 id="在安卓5-0之后，可以通过设置主题来完成『沉浸式』的效果">在安卓5.0之后，可以通过设置主题来完成『沉浸式』的效果</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;  </span><br><span class="line">  &lt;!<span class="comment">-- inherit from the material theme --&gt;  </span></span><br><span class="line">  &lt;style <span class="property">name</span>=<span class="string">"AppTheme"</span> parent=<span class="string">"android:Theme.Material"</span>&gt;  </span><br><span class="line">    &lt;!<span class="comment">-- Main theme colors --&gt;  </span></span><br><span class="line">    &lt;!<span class="comment">--   your app's branding color (for the app bar) --&gt;  </span></span><br><span class="line">    &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:colorPrimary"</span>&gt;@color/primary&lt;/<span class="property">item</span>&gt;  </span><br><span class="line">    &lt;!<span class="comment">--   darker variant of colorPrimary (for status bar, contextual app bars) --&gt;  </span></span><br><span class="line">    &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:colorPrimaryDark"</span>&gt;@color/primary_dark&lt;/<span class="property">item</span>&gt;  </span><br><span class="line">    &lt;!<span class="comment">--   theme UI controls like checkboxes and text fields --&gt;  </span></span><br><span class="line">    &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:colorAccent"</span>&gt;@color/accent&lt;/<span class="property">item</span>&gt;  </span><br><span class="line">  &lt;/style&gt;  </span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure>
+<p>关于那几个参数，可以用一张图来标识</p>
+<p><img src="http://images.cnitblog.com/blog/651487/201411/071629282842265.png" width="180" height="320"></p>
+<p>还有<code>&lt;item name=&quot;android:colorAccent&quot;&gt;#00FF00&lt;/item&gt;</code>用来设置一些奇奇怪怪的地方的颜色。。。例如checkbox神马的。。。</p>
+<p><img src="http://images.cnitblog.com/blog/651487/201411/071655233623279.jpg" width="357" height="131"></p>
+<p>然而这样像是定义了一个『主旋律』，类似知乎这种主题为蓝色的App,每个页面的顶部状态栏都设置为蓝色，也不会有违和感，可是假如你的几个页面的主题色差的有点大(就像红配绿)，就会不是那么好看了，毕竟做沉浸式的初衷就是为了让App好看一点</p>
+<h2 id="我的黑科技">我的黑科技</h2><p>在BaseActivity的onCreate()方法中使用</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="params">(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT)</span> &#123;</span><br><span class="line">    getWindow<span class="params">()</span>.setFlags<span class="params">(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样你的App在4.4.4以上就可以从顶部开始布局了，你可以在rootView 上设置padding为状态栏的高度,就可以实现『沉浸式』的效果，但是在4.4.4以下就把padding去掉</p>
+<p>得到状态栏高度的方法</p>
+<ul>
+<li>第一种</li>
+</ul>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">private int getStatusBarHeight<span class="params">()</span> &#123;</span><br><span class="line">        int statusBarHeight = <span class="number">0</span>;</span><br><span class="line">        try &#123;</span><br><span class="line">            Class&lt;?&gt; c = Class.forName<span class="params">(<span class="string">"com.android.internal.R$dimen"</span>)</span>;</span><br><span class="line">            Object o = c.newInstance<span class="params">()</span>;</span><br><span class="line">            Field field = c.getField<span class="params">(<span class="string">"status_bar_height"</span>)</span>;</span><br><span class="line">            int x = <span class="params">(Integer)</span> field.get<span class="params">(o)</span>;</span><br><span class="line">            statusBarHeight = getResources<span class="params">()</span>.getDimensionPixelSize<span class="params">(x)</span>;</span><br><span class="line">        &#125; catch <span class="params">(Exception e)</span> &#123;</span><br><span class="line">            e.printStackTrace<span class="params">()</span>;</span><br><span class="line">            Rect frame = new Rect<span class="params">()</span>;</span><br><span class="line">            getWindow<span class="params">()</span>.getDecorView<span class="params">()</span>.getWindowVisibleDisplayFrame<span class="params">(frame)</span>;</span><br><span class="line">            statusBarHeight = frame.top;</span><br><span class="line">        &#125;</span><br><span class="line">        return statusBarHeight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二种</li>
+</ul>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">private <span class="type">int</span> getStatusBarHeight() &#123;</span><br><span class="line">            <span class="type">int</span> <span class="literal">result</span> = <span class="number">0</span>;</span><br><span class="line">            <span class="type">int</span> resourceId = getResources().getIdentifier(<span class="string">"status_bar_height"</span>, <span class="string">"dimen"</span>, <span class="string">"android"</span>);</span><br><span class="line">            <span class="keyword">if</span> (resourceId &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="literal">result</span> = res.getDimensionPixelSize(resourceId);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>不过，信我的，25dp。</p>
+<p>还有在版本19以下和以上区别高度，我是这么做的</p>
+<p>values 文件夹下的 dimens.xml 中定义 padding 为0，values-v19文件夹下单 dimens.xml 中定义为25dp，世界清净了。</p>
+<h2 id="Everything_can_be_simple-">Everything can be simple.</h2>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    
+    <a class="pull-right" href="/2015/10/13/15.10.13float_text/">
+        一个开源项目float_text →
+    </a>
+    
+</nav>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐，虽然我懒。</p>
-        </div>
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/10/15/15.10.15trans_head/" data-title="关于沉浸式状态栏" data-url="http://cheduzi.wang/2015/10/15/15.10.15trans_head/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"veaerblog"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 
