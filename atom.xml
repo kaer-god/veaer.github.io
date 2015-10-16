@@ -4,7 +4,7 @@
   <subtitle><![CDATA[王小二的栖身之所]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://cheduzi.wang/"/>
-  <updated>2015-10-16T03:10:11.000Z</updated>
+  <updated>2015-10-16T03:45:17.000Z</updated>
   <id>http://cheduzi.wang/</id>
   
   <author>
@@ -19,12 +19,24 @@
     <link href="http://cheduzi.wang/2015/10/16/15.10.16android_tools/"/>
     <id>http://cheduzi.wang/2015/10/16/15.10.16android_tools/</id>
     <published>2015-10-15T16:00:00.000Z</published>
-    <updated>2015-10-16T03:10:11.000Z</updated>
-    <content type="html"><![CDATA[<p>之前写ListView的时候，是在整体布局文件中加入</p>
+    <updated>2015-10-16T03:45:17.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="ListView">ListView</h2><p>之前写ListView的时候，是在整体布局文件中加入listVew控件，然后去另一个布局文件中写单个item的布局，脑补listview会长成的样子，在AS的预览框中你看到的可能是</p>
+<p><img src="http://77fkpo.com5.z0.glb.clouddn.com/6c621612138ca4255844c8bb3520f3f0.png" width="250" height="400"></p>
+<p>然而只能将应用跑起来才能看到你想要的效果，这时候如果引入一个命名空间<code>xmlns:tools=&quot;http://schemas.android.com/tools&quot;</code>，然后稍微修改一下你的listview代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ListView</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">xmlns:tools</span>=<span class="value">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">tools:listheader</span>=<span class="value">"@layout/demo_header"</span></span><br><span class="line">    <span class="attribute">tools:listitem</span>=<span class="value">"@layout/demo_item"</span></span><br><span class="line">    /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后你就会看到你预览框美美的样子了</p>
+<p><img src="http://77fkpo.com5.z0.glb.clouddn.com/09a77e10989db0cdc69cd7c86da8b0e6.png" width="250" height="400"></p>
+<blockquote>
+<p><code>xmlns:tools=&quot;http://schemas.android.com/tools&quot;</code>是一个很重要也是很好用的命名空间，它拥有android：中所有的属性，但它标识的属性仅仅在预览中有效，不会影响真正的运行结果</p>
+</blockquote>
+<h2 id="图文控件">图文控件</h2><p><img src="http://77fkpo.com5.z0.glb.clouddn.com/f85df15638a58a5786887edf0c18bccf.png" width="496" height="160"></p>
+<p>如果你想实现上面这个布局，很多人第一反应是写一个横向线性布局或者，然后里面包含一个TextView以及一个ImageView，在UI编写的时候，我们应该hold住布局的纵深，所以有一个奇技淫巧可以简单的实现这个效果</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">TextView</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">xmlns:tools</span>=<span class="value">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"60dp"</span></span><br><span class="line">    <span class="attribute">android:padding</span>=<span class="value">"16dp"</span></span><br><span class="line">    <span class="attribute">android:textAppearance</span>=<span class="value">"?android:attr/textAppearanceListItemSmall"</span></span><br><span class="line">    <span class="attribute">android:gravity</span>=<span class="value">"center_vertical"</span></span><br><span class="line">    <span class="attribute">android:drawableRight</span>=<span class="value">"@drawable/icon_arrow"</span></span><br><span class="line">    <span class="attribute">android:drawablePadding</span>=<span class="value">"10dp"</span></span><br><span class="line">    <span class="attribute">android:text</span>=<span class="value">"设置菜单"</span></span><br><span class="line">    <span class="attribute">android:textSize</span>=<span class="value">"20sp"</span></span><br><span class="line">    /&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>drawableRight</code>来设置图标，<code>drawablePadding</code>来设置图标和文字的距离，解放布局深度。</p>
 <h2 id="Everything_can_be_simple-">Everything can be simple.</h2>]]></content>
     <summary type="html">
-    <![CDATA[<p>之前写ListView的时候，是在整体布局文件中加入</p>
-<h2 id="Everything_can_be_simple-">Everything can be simple.</h2>]]>
+    <![CDATA[<h2 id="ListView">ListView</h2><p>之前写ListView的时候，是在整体布局文件中加入listVew控件，然后去另一个布局文件中写单个item的布局，脑补listview会长成的样子，在AS的预览框中你看到的可能是</p>
+<p><img src]]>
     </summary>
     
       <category term="Android" scheme="http://cheduzi.wang/tags/Android/"/>
@@ -196,7 +208,7 @@
 <h2 id="链接">链接</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">email <span class="xml"><span class="tag">&lt;<span class="title">example@example.com</span>&gt;</span></span></span><br><span class="line">[<span class="link_label">GitHub</span>](<span class="link_url">http://github.com</span>)</span><br><span class="line">自动生成连接  <span class="xml"><span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">www.github.com</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x65;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#64;&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#x6d;">&#x65;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#64;&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#101;&#x40;&#101;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#101;&#x40;&#101;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用">区块引用</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某某说:</span><br><span class="line"><span class="blockquote">&gt; 第一行引用</span></span><br><span class="line"><span class="blockquote">&gt; 第二行费用文字</span></span><br></pre></td></tr></table></figure>
 <p><code>Control + B</code> 可插入Markdown语法。<br>效果如下：</p>
