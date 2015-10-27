@@ -2,8 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://cheduzi.wang/2015/10/01/15.10.01mark_down/</loc>
+    <lastmod>2015-10-27T12:34:27.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://cheduzi.wang/2015/10/03/15.10.03activity/</loc>
-    <lastmod>2015-10-27T12:29:35.000Z</lastmod>
+    <lastmod>2015-10-27T12:34:19.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cheduzi.wang/2015/10/13/15.10.13float_text/</loc>
+    <lastmod>2015-10-27T12:34:12.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cheduzi.wang/2015/10/15/15.10.15trans_head/</loc>
+    <lastmod>2015-10-27T12:34:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cheduzi.wang/2015/10/16/15.10.16android_tools/</loc>
+    <lastmod>2015-10-27T12:33:45.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://cheduzi.wang/2015/10/16/15.10.20birthday/</loc>
+    <lastmod>2015-10-27T12:33:27.000Z</lastmod>
   </url>
   
   <url>
@@ -17,21 +42,6 @@
   </url>
   
   <url>
-    <loc>http://cheduzi.wang/2015/10/16/15.10.20birthday/</loc>
-    <lastmod>2015-10-20T12:28:24.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cheduzi.wang/2015/10/16/15.10.16android_tools/</loc>
-    <lastmod>2015-10-16T03:45:17.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cheduzi.wang/2015/10/01/15.10.01mark_down/</loc>
-    <lastmod>2015-10-15T14:15:59.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://cheduzi.wang/about.html</loc>
     <lastmod>2015-10-15T14:13:07.000Z</lastmod>
   </url>
@@ -39,16 +49,6 @@
   <url>
     <loc>http://cheduzi.wang/about/index.html</loc>
     <lastmod>2015-10-15T14:13:07.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cheduzi.wang/2015/10/15/15.10.15trans_head/</loc>
-    <lastmod>2015-10-15T13:43:45.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://cheduzi.wang/2015/10/13/15.10.13float_text/</loc>
-    <lastmod>2015-10-15T08:21:17.000Z</lastmod>
   </url>
   
 </urlset>

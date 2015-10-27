@@ -4,7 +4,7 @@
   <subtitle><![CDATA[王小二的栖身之所]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://cheduzi.wang/"/>
-  <updated>2015-10-20T12:28:24.000Z</updated>
+  <updated>2015-10-27T12:33:27.000Z</updated>
   <id>http://cheduzi.wang/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://cheduzi.wang/2015/10/16/15.10.20birthday/"/>
     <id>http://cheduzi.wang/2015/10/16/15.10.20birthday/</id>
     <published>2015-10-15T16:00:00.000Z</published>
-    <updated>2015-10-20T12:28:24.000Z</updated>
+    <updated>2015-10-27T12:33:27.000Z</updated>
     <content type="html"><![CDATA[<embed src="http://www.xiami.com/widget/0_1774946504/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent">]]></content>
     <summary type="html">
     <![CDATA[<embed src="http://www.xiami.com/widget/0_1774946504/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="t]]>
@@ -27,7 +27,7 @@
     
       <category term="生日" scheme="http://cheduzi.wang/tags/%E7%94%9F%E6%97%A5/"/>
     
-      <category term="生日" scheme="http://cheduzi.wang/categories/%E7%94%9F%E6%97%A5/"/>
+      <category term="杂记" scheme="http://cheduzi.wang/categories/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   
@@ -36,7 +36,7 @@
     <link href="http://cheduzi.wang/2015/10/16/15.10.16android_tools/"/>
     <id>http://cheduzi.wang/2015/10/16/15.10.16android_tools/</id>
     <published>2015-10-15T16:00:00.000Z</published>
-    <updated>2015-10-16T03:45:17.000Z</updated>
+    <updated>2015-10-27T12:33:45.000Z</updated>
     <content type="html"><![CDATA[<h2 id="ListView">ListView</h2><p>之前写ListView的时候，是在整体布局文件中加入listVew控件，然后去另一个布局文件中写单个item的布局，脑补listview会长成的样子，在AS的预览框中你看到的可能是</p>
 <p><img src="http://77fkpo.com5.z0.glb.clouddn.com/6c621612138ca4255844c8bb3520f3f0.png" width="250" height="400"></p>
 <p>然而只能将应用跑起来才能看到你想要的效果，这时候如果引入一个命名空间<code>xmlns:tools=&quot;http://schemas.android.com/tools&quot;</code>，然后稍微修改一下你的listview代码</p>
@@ -56,7 +56,7 @@
 <p><img src]]>
     </summary>
     
-      <category term="Android" scheme="http://cheduzi.wang/tags/Android/"/>
+      <category term="tools" scheme="http://cheduzi.wang/tags/tools/"/>
     
       <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
     
@@ -67,7 +67,7 @@
     <link href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/"/>
     <id>http://cheduzi.wang/2015/10/15/15.10.15trans_head/</id>
     <published>2015-10-14T16:00:00.000Z</published>
-    <updated>2015-10-15T13:43:45.000Z</updated>
+    <updated>2015-10-27T12:34:00.000Z</updated>
     <content type="html"><![CDATA[<h2 id="在安卓4-4之后，谷歌提出了『沉浸式状态栏』这个说法">在安卓4.4之后，谷歌提出了『沉浸式状态栏』这个说法</h2><p>但是我觉得它实现的效果更像是单纯的全屏模式更像一些</p>
 <p>这里有篇文章<a href="http://blog.csdn.net/sdvch/article/details/44209959" target="_blank" rel="external">使用全屏沉浸模式（Using Immersive Full-Screen Mode）</a>来讲述利用setSystemUiVisibility()方法，实现『沉浸』的过程，我觉得这种『沉浸式』可以用来开发视频播放的Acivity，它和<code>android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;</code>的区别好像就在于前者的触摸操作会退出全屏</p>
 <p><img src="http://77fkpo.com5.z0.glb.clouddn.com/e051c31ac90cfc41c60c81fb11020e83.png" width="400" height="200"></p>
@@ -98,7 +98,7 @@
 <p>这里有篇文章<a href="http://blog.csdn.net/s]]>
     </summary>
     
-      <category term="Android" scheme="http://cheduzi.wang/tags/Android/"/>
+      <category term="沉浸式状态栏" scheme="http://cheduzi.wang/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%8A%B6%E6%80%81%E6%A0%8F/"/>
     
       <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
     
@@ -109,7 +109,7 @@
     <link href="http://cheduzi.wang/2015/10/13/15.10.13float_text/"/>
     <id>http://cheduzi.wang/2015/10/13/15.10.13float_text/</id>
     <published>2015-10-12T16:00:00.000Z</published>
-    <updated>2015-10-15T08:21:17.000Z</updated>
+    <updated>2015-10-27T12:34:12.000Z</updated>
     <content type="html"><![CDATA[<p>在注册、登录以及一些表单填写的时候，会下意识地做一些动态效果上去，就像：</p>
 <p><img src="http://77fkpo.com5.z0.glb.clouddn.com/46aed824f870cb3b8747a7c6d2d0bd85.jpg" width="400" height="300"></p>
 <p>在谷歌还没发布design包之前，在github上有一个类似的开源库<a href="https://github.com/wrapp/floatlabelededittext" target="_blank" rel="external">floatlabelededittext</a></p>
@@ -125,7 +125,7 @@
 <p><img src="http://77fkpo.com5.z0.glb.clouddn.com/46aed824f870cb3b8747a7c6d2d0bd85.jpg" width="]]>
     </summary>
     
-      <category term="Android" scheme="http://cheduzi.wang/tags/Android/"/>
+      <category term="TextInputLayout" scheme="http://cheduzi.wang/tags/TextInputLayout/"/>
     
       <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
     
@@ -136,7 +136,7 @@
     <link href="http://cheduzi.wang/2015/10/03/15.10.03activity/"/>
     <id>http://cheduzi.wang/2015/10/03/15.10.03activity/</id>
     <published>2015-10-02T16:00:00.000Z</published>
-    <updated>2015-10-27T12:29:35.000Z</updated>
+    <updated>2015-10-27T12:34:19.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Activity的生命周期">Activity的生命周期</h2><p>这个话题太常见了，随便谷歌一下就能看到一大堆答案</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st=&#62;start: Activity&#21551;&#21160;&#10;e=&#62;end: Activity&#38144;&#27585;&#10;create=&#62;operation: onCreate&#10;start=&#62;operation: onStart(&#26410;&#26174;&#31034;)&#10;resume=&#62;operation: onResume(&#24050;&#32463;&#26174;&#31034;)&#10;pause=&#62;operation: onPause&#10;stop=&#62;operation: onStop&#10;destory=&#62;operation: onDestory&#10;&#10;&#10;st-&#62;create-&#62;start-&#62;resume-&#62;pause-&#62;stop-&#62;destory-&#62;e</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -162,7 +162,7 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span ]]>
     </summary>
     
-      <category term="Androidssss" scheme="http://cheduzi.wang/tags/Androidssss/"/>
+      <category term="生命周期" scheme="http://cheduzi.wang/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     
       <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
     
@@ -173,7 +173,7 @@
     <link href="http://cheduzi.wang/2015/10/01/15.10.01mark_down/"/>
     <id>http://cheduzi.wang/2015/10/01/15.10.01mark_down/</id>
     <published>2015-09-30T16:00:00.000Z</published>
-    <updated>2015-10-15T14:15:59.000Z</updated>
+    <updated>2015-10-27T12:34:27.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Markdown_语法和_MWeb_写作使用说明">Markdown 语法和 MWeb 写作使用说明</h1><h2 id="Markdown_的设计哲学">Markdown 的设计哲学</h2><blockquote>
 <p>Markdown 的目標是實現「易讀易寫」。<br>不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。<br>Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
 </blockquote>
@@ -225,7 +225,7 @@
 <h2 id="链接">链接</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">email <span class="xml"><span class="tag">&lt;<span class="title">example@example.com</span>&gt;</span></span></span><br><span class="line">[<span class="link_label">GitHub</span>](<span class="link_url">http://github.com</span>)</span><br><span class="line">自动生成连接  <span class="xml"><span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">www.github.com</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#109;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x65;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#x40;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#x65;&#120;&#97;&#x6d;&#x70;&#x6c;&#101;&#x40;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#58;&#101;&#120;&#97;&#109;&#112;&#x6c;&#101;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;">&#101;&#120;&#97;&#109;&#112;&#x6c;&#101;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#108;&#101;&#x2e;&#x63;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用">区块引用</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某某说:</span><br><span class="line"><span class="blockquote">&gt; 第一行引用</span></span><br><span class="line"><span class="blockquote">&gt; 第二行费用文字</span></span><br></pre></td></tr></table></figure>
 <p><code>Control + B</code> 可插入Markdown语法。<br>效果如下：</p>
@@ -309,7 +309,7 @@
     
     </summary>
     
-      <category term="Markdown" scheme="http://cheduzi.wang/tags/Markdown/"/>
+      <category term="语法" scheme="http://cheduzi.wang/tags/%E8%AF%AD%E6%B3%95/"/>
     
       <category term="Markdown" scheme="http://cheduzi.wang/categories/Markdown/"/>
     
