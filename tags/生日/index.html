@@ -3,21 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于Activity | Veaer</title>
+  <title>Tag: 生日 | Veaer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Activity的生命周期这个话题太常见了，随便谷歌一下就能看到一大堆答案
-1st=&amp;#62;start: Activity&amp;#21551;&amp;#21160;&amp;#10;e=&amp;#62;end: Activity&amp;#38144;&amp;#27585;&amp;#10;create=&amp;#62;operation: onCreate&amp;#10;start=&amp;#62;operation: onStart(&amp;#26410;&amp;#">
-<meta property="og:type" content="article">
-<meta property="og:title" content="关于Activity">
-<meta property="og:url" content="http://cheduzi.wang/2015/10/03/15.10.03activity/index.html">
+  <meta name="description" content="王小二的栖身之所">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Veaer">
+<meta property="og:url" content="http://cheduzi.wang/tags/生日/index.html">
 <meta property="og:site_name" content="Veaer">
-<meta property="og:description" content="Activity的生命周期这个话题太常见了，随便谷歌一下就能看到一大堆答案
-1st=&amp;#62;start: Activity&amp;#21551;&amp;#21160;&amp;#10;e=&amp;#62;end: Activity&amp;#38144;&amp;#27585;&amp;#10;create=&amp;#62;operation: onCreate&amp;#10;start=&amp;#62;operation: onStart(&amp;#26410;&amp;#">
-<meta property="og:updated_time" content="2015-10-13T12:37:20.000Z">
+<meta property="og:description" content="王小二的栖身之所">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Activity">
-<meta name="twitter:description" content="Activity的生命周期这个话题太常见了，随便谷歌一下就能看到一大堆答案
-1st=&amp;#62;start: Activity&amp;#21551;&amp;#21160;&amp;#10;e=&amp;#62;end: Activity&amp;#38144;&amp;#27585;&amp;#10;create=&amp;#62;operation: onCreate&amp;#10;start=&amp;#62;operation: onStart(&amp;#26410;&amp;#">
+<meta name="twitter:title" content="Veaer">
+<meta name="twitter:description" content="王小二的栖身之所">
   
   
     <link rel="icon" href="favicon.png">
@@ -131,106 +127,49 @@
 </aside>
 
       
-      <section id="main"><article id="post-15.10.03activity" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
+      <section id="main">
+    <section class="archives-wrap">
+    <div class="archive-tag-wrap">
+      <span class="archive-tag">#生日</span>
+    </div>
+    <div class="archives">
     
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
     
-    
-      <header class="article-header">
-        
+    <div class="archive-article-thumbnail">
+      <a href="/2015/10/16/15.10.20birthday/" class="thumbnail">
   
-    <h1 class="article-title" itemprop="name">
-      关于Activity
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+    </div>
+    
+    <header class="archive-article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2015/10/16/15.10.20birthday/">2015年 秋</a>
     </h1>
   
 
-        <div class="article-meta">
-          
-  <div class="article-date">
+      
+        
+  <div class="archive-article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/10/03/15.10.03activity/">
-      <time datetime="2015-10-02T16:00:00.000Z" itemprop="datePublished">2015-10-03</time>
+    <a href="/2015/10/16/15.10.20birthday/">
+      <time datetime="2015-10-15T16:00:00.000Z" itemprop="datePublished">2015 10月 16</time>
     </a>
   </div>
 
 
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Android/">Android</a>
+      
+    </header>
   </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-                
-        <h2 id="Activity的生命周期">Activity的生命周期</h2><p>这个话题太常见了，随便谷歌一下就能看到一大堆答案</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st=&#62;start: Activity&#21551;&#21160;&#10;e=&#62;end: Activity&#38144;&#27585;&#10;create=&#62;operation: onCreate&#10;start=&#62;operation: onStart(&#26410;&#26174;&#31034;)&#10;resume=&#62;operation: onResume(&#24050;&#32463;&#26174;&#31034;)&#10;pause=&#62;operation: onPause&#10;stop=&#62;operation: onStop&#10;destory=&#62;operation: onDestory&#10;&#10;&#10;st-&#62;create-&#62;start-&#62;resume-&#62;pause-&#62;stop-&#62;destory-&#62;e</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>onCreate():不需要过多解释，这个阶段是activity刚刚建立，一般用来做布局文件的加载，以及数据的初始化<br>Called when the activity is starting.  This is where most initialization</li>
-<li>onStart():Activity已经准备好，只是暂时不可见<br>Called when the activity is becoming visible to the user</li>
-<li>onResume():Activity即将从不可见变为可见<br>Called when the activity will start interacting with the user</li>
-<li>onPause():Activity将要开始停止，有一种极端情况，就是Activity在这这一阶段的时候迅速再切回屏幕，本Activity将再调用 onResume方法，这个阶段可以做一些保存状态的动作，但不能太耗时<br>Called when the system is about to start resuming a previous activity</li>
-<li>onStop():Activity即将停止，这个阶段可以做一些保存状态的动作，但不能太耗时<br>Called when the activity is no longer visible to the user, because another activity has been resumed and is covering this one<br>onDestory():Activity即将被销毁，在这一阶段可以做一些资源回收的操作<br>The final call you receive before your activity is destroyed</li>
-</ul>
-</blockquote>
-<p>其实Activity的生命周期远不止这些，还有</p>
-<ul>
-<li><p>onPostCreate()（Called when activity start-up is complete (after onStart() and onRestoreInstanceState(Bundle) have been called))</p>
-</li>
-<li><p>onPostResume()（Called when activity resume is complete）等等</p>
-</li>
-</ul>
-<p>真实开发过程中用到的不是很多，当然，每个人的业务需求都不一样，整清楚生命周期才是重要的。：）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://cheduzi.wang/2015/10/03/15.10.03activity/" data-id="cig9a4zx5000hpjqx7d2kvdxk" class="article-share-link">分享到</a>
-      
-        <a href="http://cheduzi.wang/2015/10/03/15.10.03activity/#ds-thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/10/13/15.10.13float_text/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          一个开源项目float_text
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/10/01/15.10.01mark_down/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">Markdown介绍</div>
-    </a>
-  
-</nav>
-
-
-  
 </article>
-
-
-  <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="http://cheduzi.wang/2015/10/03/15.10.03activity/" data-title="关于Activity" data-url="http://cheduzi.wang/2015/10/03/15.10.03activity/">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
-      </div>
-  </section>
-
-</section>
+    
+    </div></section>
+    </section>
       
         <aside id="sidebar">
   

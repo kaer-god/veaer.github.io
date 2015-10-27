@@ -4,7 +4,7 @@
   <subtitle><![CDATA[王小二的栖身之所]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://cheduzi.wang/"/>
-  <updated>2015-10-16T03:45:17.000Z</updated>
+  <updated>2015-10-20T12:28:24.000Z</updated>
   <id>http://cheduzi.wang/</id>
   
   <author>
@@ -13,6 +13,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[2015年 秋]]></title>
+    <link href="http://cheduzi.wang/2015/10/16/15.10.20birthday/"/>
+    <id>http://cheduzi.wang/2015/10/16/15.10.20birthday/</id>
+    <published>2015-10-15T16:00:00.000Z</published>
+    <updated>2015-10-20T12:28:24.000Z</updated>
+    <content type="html"><![CDATA[<embed src="http://www.xiami.com/widget/0_1774946504/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent">]]></content>
+    <summary type="html">
+    <![CDATA[<embed src="http://www.xiami.com/widget/0_1774946504/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="t]]>
+    </summary>
+    
+      <category term="生日" scheme="http://cheduzi.wang/tags/%E7%94%9F%E6%97%A5/"/>
+    
+      <category term="生日" scheme="http://cheduzi.wang/categories/%E7%94%9F%E6%97%A5/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ListView实时预览以及图文控件]]></title>
@@ -61,13 +78,13 @@
 <p><img src="http://images.cnitblog.com/blog/651487/201411/071655233623279.jpg" width="357" height="131"></p>
 <p>然而这样像是定义了一个『主旋律』，类似知乎这种主题为蓝色的App,每个页面的顶部状态栏都设置为蓝色，也不会有违和感，可是假如你的几个页面的主题色差的有点大(就像红配绿)，就会不是那么好看了，毕竟做沉浸式的初衷就是为了让App好看一点</p>
 <h2 id="我的黑科技">我的黑科技</h2><p>在BaseActivity的onCreate()方法中使用</p>
-<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="params">(Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT)</span> &#123;</span><br><span class="line">    getWindow<span class="params">()</span>.setFlags<span class="params">(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight roboconf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="component">if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.KITKAT) &#123;</span><br><span class="line">    getWindow()<span class="string">.setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS</span>,WindowManager<span class="string">.LayoutParams.FLAG_TRANSLUCENT_STATUS)</span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>这样你的App在4.4.4以上就可以从顶部开始布局了，你可以在rootView 上设置padding为状态栏的高度,就可以实现『沉浸式』的效果，但是在4.4.4以下就把padding去掉</p>
 <p>得到状态栏高度的方法</p>
 <ul>
 <li>第一种</li>
 </ul>
-<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">private int getStatusBarHeight<span class="params">()</span> &#123;</span><br><span class="line">        int statusBarHeight = <span class="number">0</span>;</span><br><span class="line">        try &#123;</span><br><span class="line">            Class&lt;?&gt; c = Class.forName<span class="params">(<span class="string">"com.android.internal.R$dimen"</span>)</span>;</span><br><span class="line">            Object o = c.newInstance<span class="params">()</span>;</span><br><span class="line">            Field field = c.getField<span class="params">(<span class="string">"status_bar_height"</span>)</span>;</span><br><span class="line">            int x = <span class="params">(Integer)</span> field.get<span class="params">(o)</span>;</span><br><span class="line">            statusBarHeight = getResources<span class="params">()</span>.getDimensionPixelSize<span class="params">(x)</span>;</span><br><span class="line">        &#125; catch <span class="params">(Exception e)</span> &#123;</span><br><span class="line">            e.printStackTrace<span class="params">()</span>;</span><br><span class="line">            Rect frame = new Rect<span class="params">()</span>;</span><br><span class="line">            getWindow<span class="params">()</span>.getDecorView<span class="params">()</span>.getWindowVisibleDisplayFrame<span class="params">(frame)</span>;</span><br><span class="line">            statusBarHeight = frame.top;</span><br><span class="line">        &#125;</span><br><span class="line">        return statusBarHeight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getStatusBarHeight</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> statusBarHeight = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Class&lt;?&gt; c = Class.forName(<span class="string">"com.android.internal.R$dimen"</span>);</span><br><span class="line">            Object o = c.newInstance();</span><br><span class="line">            Field field = c.getField(<span class="string">"status_bar_height"</span>);</span><br><span class="line">            <span class="keyword">int</span> x = (Integer) field.get(o);</span><br><span class="line">            statusBarHeight = getResources().getDimensionPixelSize(x);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            Rect frame = <span class="keyword">new</span> Rect();</span><br><span class="line">            getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);</span><br><span class="line">            statusBarHeight = frame.top;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> statusBarHeight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>第二种</li>
 </ul>
@@ -208,7 +225,7 @@
 <h2 id="链接">链接</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">email <span class="xml"><span class="tag">&lt;<span class="title">example@example.com</span>&gt;</span></span></span><br><span class="line">[<span class="link_label">GitHub</span>](<span class="link_url">http://github.com</span>)</span><br><span class="line">自动生成连接  <span class="xml"><span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">www.github.com</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#101;&#x40;&#101;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;">&#x65;&#x78;&#x61;&#109;&#112;&#x6c;&#101;&#x40;&#101;&#120;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#x6f;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#101;&#120;&#97;&#109;&#112;&#108;&#x65;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">&#101;&#120;&#97;&#109;&#112;&#108;&#x65;&#x40;&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用">区块引用</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某某说:</span><br><span class="line"><span class="blockquote">&gt; 第一行引用</span></span><br><span class="line"><span class="blockquote">&gt; 第二行费用文字</span></span><br></pre></td></tr></table></figure>
 <p><code>Control + B</code> 可插入Markdown语法。<br>效果如下：</p>
@@ -274,7 +291,7 @@
 <p>\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =<br>1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}<br>{1+\frac{e^{-8\pi}} {1+\ldots} } } } \]</p>
 <p>行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</p>
 <h2 id="脚注（Footnote）">脚注（Footnote）</h2><p>Markdown 语法：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个脚注：<span class="attr_selector">[^sample_footnote]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个脚注：<span class="string">[^sample_footnote]</span></span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p>这是一个脚注：<a href="这里是脚注信息">^sample_footnote</a></p>
 <h2 id="注释和阅读更多">注释和阅读更多</h2><!-- comment -->
