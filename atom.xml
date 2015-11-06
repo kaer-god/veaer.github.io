@@ -4,7 +4,7 @@
   <subtitle><![CDATA[王小二的栖身之所]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://cheduzi.wang/"/>
-  <updated>2015-10-27T12:33:27.000Z</updated>
+  <updated>2015-11-06T10:44:56.000Z</updated>
   <id>http://cheduzi.wang/</id>
   
   <author>
@@ -13,6 +13,83 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[第一个开源库Glass]]></title>
+    <link href="http://cheduzi.wang/2015/11/06/15.11.06glass/"/>
+    <id>http://cheduzi.wang/2015/11/06/15.11.06glass/</id>
+    <published>2015-11-05T16:00:00.000Z</published>
+    <updated>2015-11-06T10:44:56.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="在安卓4-4之后，开始有了『沉浸式状态栏』这个说法">在安卓4.4之后，开始有了『沉浸式状态栏』这个说法</h2><p>上次在<a href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/">关于沉浸式状态栏</a>这篇文章中讲了一下我在适配4.4-5.0之间版本的APP的状态栏的方法，这段时间，我整理了一下，把这个小方法抽成了一个库，发布到了 maven。</p>
+<p>不知道什么叫做”沉浸式状态栏”、”translucent status bar”、”translucent system bar”</p>
+<p>在5.0以下解放状态栏的App其实并不多，例如ES文件管理器、豌豆荚、最美应用</p>
+<p><img src="/assets/post/151106/head.jpg" width="500" height="300"></p>
+<p>这三个就是完全的典型了，可以看到ES状态栏还是会有一道半透明的灰条，而豌豆荚在上滑的时候会发生奇怪的事情，我觉得最美反倒是避开了这个事情。。。</p>
+<p>然后动手写了个实现4.4到5.0之间的版本解放状态栏的东西(黑科技)，当然并没有什么了不得的东西。。。如果大家有更好的解决方法，希望多多交流，欢迎大家多多issues和pr</p>
+<p>也可以用来实现”快速换肤”的效果</p>
+<p>机型：IUNI U3,安卓版本4.4.4</p>
+<p><img src="/assets/post/151106/iuni.gif" width="200" height="350"></p>
+<p>机型：Nexus5,安卓版本5.1.1</p>
+<p><img src="/assets/post/151106/n5.gif" width="200" height="350"></p>
+<p>使用方法：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">适应<span class="number">5</span>.<span class="number">0</span>以下</span><br><span class="line"><span class="label">mGlass</span> = Glass.<span class="keyword">Builder.newInstance()</span><br><span class="line"></span>                .statusBarWithLower(getWindow(), App.mContext, ContextCompat.getColor(App.mContext, R.color.colorPrimary))</span><br><span class="line">                <span class="preprocessor">.text</span>(textView)</span><br><span class="line">                .<span class="keyword">background(appBar)</span><br><span class="line"></span>                .<span class="keyword">background(fab)</span><br><span class="line"></span>                .<span class="keyword">background(colorView)</span><br><span class="line"></span>                .<span class="keyword">build();</span><br><span class="line"></span></span><br><span class="line">不适应<span class="number">5</span>.<span class="number">0</span>以下</span><br><span class="line"><span class="label">mGlass</span> = Glass.<span class="keyword">Builder.newInstance()</span><br><span class="line"></span>                .statusBar(getWindow(), ContextCompat.getColor(App.mContext, R.color.colorPrimary))</span><br><span class="line">                <span class="preprocessor">.text</span>(textView)</span><br><span class="line">                .<span class="keyword">background(appBar)</span><br><span class="line"></span>                .<span class="keyword">background(fab)</span><br><span class="line"></span>                .<span class="keyword">background(colorView)</span><br><span class="line"></span>                .<span class="keyword">build();</span></span><br></pre></td></tr></table></figure>
+<p>使用方法(虽然还有坑，但是先发上来吧)：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">compile</span> <span class="string">'king.veaer:glass:1.0.1'</span></span><br></pre></td></tr></table></figure>
+<p>2015.11.5更新</p>
+<p>新加入palette支持,那些视图顶部就是图片的少年</p>
+<p><img src="/assets/post/151106/palette.gif" width="200" height="350"></p>
+<p>git地址：<a href="https://github.com/Veaer/Glass" target="_blank" rel="external">点我</a></p>
+<p>demo地址： <a href="http://fir.im/vGlass" target="_blank" rel="external">点我</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="在安卓4-4之后，开始有了『沉浸式状态栏』这个说法">在安卓4.4之后，开始有了『沉浸式状态栏』这个说法</h2><p>上次在<a href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/">关于沉浸式状态栏]]>
+    </summary>
+    
+      <category term="开源" scheme="http://cheduzi.wang/tags/%E5%BC%80%E6%BA%90/"/>
+    
+      <category term="沉浸式状态栏" scheme="http://cheduzi.wang/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%8A%B6%E6%80%81%E6%A0%8F/"/>
+    
+      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[第一个开源项目Gank]]></title>
+    <link href="http://cheduzi.wang/2015/11/01/15.11.01gank/"/>
+    <id>http://cheduzi.wang/2015/11/01/15.11.01gank/</id>
+    <published>2015-10-31T16:00:00.000Z</published>
+    <updated>2015-11-06T10:37:49.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="造福万民的代(肥)码(皂)家又做了件好事">造福万民的代(肥)码(皂)家又做了件好事</h2><p><a href="http://gank.io/" target="_blank" rel="external">干货集中营</a>每日分享妹子图 和 技术干货，还有供大家中午休息的休闲视频。</p>
+<p>没啥，就是看技(mei)术(zi)的</p>
+<p>截图附上</p>
+<p><img src="/assets/post/151101/gank.jpg" width="500" height="300"></p>
+<ul>
+<li>“appcompat-v7”     : “com.android.support:appcompat-v7:22.2.1”</li>
+<li>“design”           : “com.android.support:design:22.2.1”</li>
+<li>“recyclerview-v7”  : “com.android.support:recyclerview-v7:22.2.1”</li>
+<li>“okhttp”           : “com.squareup.okhttp:okhttp:2.3.0”</li>
+<li>“retrofit”         : “com.squareup.retrofit:retrofit:1.9.0”</li>
+<li>“rxandroid”        : “io.reactivex:rxandroid:1.0.1”</li>
+<li>“butterknife”      : “com.jakewharton:butterknife:7.0.1”</li>
+<li>“umeng-analytics”  : “com.umeng.analytics:analytics:latest.integration”</li>
+<li>“glide”            : “com.github.bumptech.glide:glide:3.6.1”</li>
+<li>“picasso”          : “com.squareup.picasso:picasso:2.5.2”</li>
+<li>“photoview”        : “com.github.chrisbanes.photoview:library:1.2.3”</li>
+</ul>
+<p>git地址：<a href="https://github.com/Veaer/Gank-Veaer" target="_blank" rel="external">点我</a></p>
+<p>apK下载：<a href="https://fir.im/gankapp" target="_blank" rel="external">点我</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="造福万民的代(肥)码(皂)家又做了件好事">造福万民的代(肥)码(皂)家又做了件好事</h2><p><a href="http://gank.io/" target="_blank" rel="external">干货集中营</a>每日分享妹子图 和 技术干货，还]]>
+    </summary>
+    
+      <category term="Gank" scheme="http://cheduzi.wang/tags/Gank/"/>
+    
+      <category term="开源" scheme="http://cheduzi.wang/tags/%E5%BC%80%E6%BA%90/"/>
+    
+      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[2015年 秋]]></title>
@@ -67,8 +144,8 @@
     <link href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/"/>
     <id>http://cheduzi.wang/2015/10/15/15.10.15trans_head/</id>
     <published>2015-10-14T16:00:00.000Z</published>
-    <updated>2015-10-27T12:34:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="在安卓4-4之后，谷歌提出了『沉浸式状态栏』这个说法">在安卓4.4之后，谷歌提出了『沉浸式状态栏』这个说法</h2><p>但是我觉得它实现的效果更像是单纯的全屏模式更像一些</p>
+    <updated>2015-11-06T10:44:56.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="在安卓4-4之后，开始有了『沉浸式状态栏』这个说法">在安卓4.4之后，开始有了『沉浸式状态栏』这个说法</h2><p>但是我觉得它实现的效果更像是单纯的全屏模式更像一些</p>
 <p>这里有篇文章<a href="http://blog.csdn.net/sdvch/article/details/44209959" target="_blank" rel="external">使用全屏沉浸模式（Using Immersive Full-Screen Mode）</a>来讲述利用setSystemUiVisibility()方法，实现『沉浸』的过程，我觉得这种『沉浸式』可以用来开发视频播放的Acivity，它和<code>android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;</code>的区别好像就在于前者的触摸操作会退出全屏</p>
 <p><img src="http://77fkpo.com5.z0.glb.clouddn.com/e051c31ac90cfc41c60c81fb11020e83.png" width="400" height="200"></p>
 <h2 id="在安卓5-0之后，可以通过设置主题来完成『沉浸式』的效果">在安卓5.0之后，可以通过设置主题来完成『沉浸式』的效果</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;  </span><br><span class="line">  &lt;!<span class="comment">-- inherit from the material theme --&gt;  </span></span><br><span class="line">  &lt;style <span class="property">name</span>=<span class="string">"AppTheme"</span> parent=<span class="string">"android:Theme.Material"</span>&gt;  </span><br><span class="line">    &lt;!<span class="comment">-- Main theme colors --&gt;  </span></span><br><span class="line">    &lt;!<span class="comment">--   your app's branding color (for the app bar) --&gt;  </span></span><br><span class="line">    &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:colorPrimary"</span>&gt;@color/primary&lt;/<span class="property">item</span>&gt;  </span><br><span class="line">    &lt;!<span class="comment">--   darker variant of colorPrimary (for status bar, contextual app bars) --&gt;  </span></span><br><span class="line">    &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:colorPrimaryDark"</span>&gt;@color/primary_dark&lt;/<span class="property">item</span>&gt;  </span><br><span class="line">    &lt;!<span class="comment">--   theme UI controls like checkboxes and text fields --&gt;  </span></span><br><span class="line">    &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:colorAccent"</span>&gt;@color/accent&lt;/<span class="property">item</span>&gt;  </span><br><span class="line">  &lt;/style&gt;  </span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure>
@@ -94,8 +171,8 @@
 <p>values 文件夹下的 dimens.xml 中定义 padding 为0，values-v19文件夹下单 dimens.xml 中定义为25dp，世界清净了。</p>
 <h2 id="Everything_can_be_simple-">Everything can be simple.</h2>]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="在安卓4-4之后，谷歌提出了『沉浸式状态栏』这个说法">在安卓4.4之后，谷歌提出了『沉浸式状态栏』这个说法</h2><p>但是我觉得它实现的效果更像是单纯的全屏模式更像一些</p>
-<p>这里有篇文章<a href="http://blog.csdn.net/s]]>
+    <![CDATA[<h2 id="在安卓4-4之后，开始有了『沉浸式状态栏』这个说法">在安卓4.4之后，开始有了『沉浸式状态栏』这个说法</h2><p>但是我觉得它实现的效果更像是单纯的全屏模式更像一些</p>
+<p>这里有篇文章<a href="http://blog.csdn.net/sdv]]>
     </summary>
     
       <category term="沉浸式状态栏" scheme="http://cheduzi.wang/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%8A%B6%E6%80%81%E6%A0%8F/"/>
@@ -136,18 +213,18 @@
     <link href="http://cheduzi.wang/2015/10/03/15.10.03activity/"/>
     <id>http://cheduzi.wang/2015/10/03/15.10.03activity/</id>
     <published>2015-10-02T16:00:00.000Z</published>
-    <updated>2015-10-27T12:34:19.000Z</updated>
+    <updated>2015-11-06T10:39:35.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Activity的生命周期">Activity的生命周期</h2><p>这个话题太常见了，随便谷歌一下就能看到一大堆答案</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st=&#62;start: Activity&#21551;&#21160;&#10;e=&#62;end: Activity&#38144;&#27585;&#10;create=&#62;operation: onCreate&#10;start=&#62;operation: onStart(&#26410;&#26174;&#31034;)&#10;resume=&#62;operation: onResume(&#24050;&#32463;&#26174;&#31034;)&#10;pause=&#62;operation: onPause&#10;stop=&#62;operation: onStop&#10;destory=&#62;operation: onDestory&#10;&#10;&#10;st-&#62;create-&#62;start-&#62;resume-&#62;pause-&#62;stop-&#62;destory-&#62;e</span><br></pre></td></tr></table></figure>
-<blockquote>
+<p>st=&gt;start: Activity启动<br>e=&gt;end: Activity销毁<br>create=&gt;operation: onCreate<br>start=&gt;operation: onStart(未显示)<br>resume=&gt;operation: onResume(已经显示)<br>pause=&gt;operation: onPause<br>stop=&gt;operation: onStop<br>destory=&gt;operation: onDestory</p>
+<p>st-&gt;create-&gt;start-&gt;resume-&gt;pause-&gt;stop-&gt;destory-&gt;e</p>
 <ul>
 <li>onCreate():不需要过多解释，这个阶段是activity刚刚建立，一般用来做布局文件的加载，以及数据的初始化<br>Called when the activity is starting.  This is where most initialization</li>
 <li>onStart():Activity已经准备好，只是暂时不可见<br>Called when the activity is becoming visible to the user</li>
 <li>onResume():Activity即将从不可见变为可见<br>Called when the activity will start interacting with the user</li>
 <li>onPause():Activity将要开始停止，有一种极端情况，就是Activity在这这一阶段的时候迅速再切回屏幕，本Activity将再调用 onResume方法，这个阶段可以做一些保存状态的动作，但不能太耗时<br>Called when the system is about to start resuming a previous activity</li>
-<li>onStop():Activity即将停止，这个阶段可以做一些保存状态的动作，但不能太耗时<br>Called when the activity is no longer visible to the user, because another activity has been resumed and is covering this one<br>onDestory():Activity即将被销毁，在这一阶段可以做一些资源回收的操作<br>The final call you receive before your activity is destroyed</li>
+<li>onStop():Activity即将停止，这个阶段可以做一些保存状态的动作，但不能太耗时<br>Called when the activity is no longer visible to the user, because another activity has been resumed and is covering this one</li>
+<li>onDestory():Activity即将被销毁，在这一阶段可以做一些资源回收的操作<br>The final call you receive before your activity is destroyed</li>
 </ul>
-</blockquote>
 <p>其实Activity的生命周期远不止这些，还有</p>
 <ul>
 <li><p>onPostCreate()（Called when activity start-up is complete (after onStart() and onRestoreInstanceState(Bundle) have been called))</p>
@@ -159,7 +236,7 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="Activity的生命周期">Activity的生命周期</h2><p>这个话题太常见了，随便谷歌一下就能看到一大堆答案</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span ]]>
+<p>st=&gt;start: Activity启动<br>e=&gt;end: Activity销毁<br>create=&gt;]]>
     </summary>
     
       <category term="生命周期" scheme="http://cheduzi.wang/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
@@ -225,7 +302,7 @@
 <h2 id="链接">链接</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">email <span class="xml"><span class="tag">&lt;<span class="title">example@example.com</span>&gt;</span></span></span><br><span class="line">[<span class="link_label">GitHub</span>](<span class="link_url">http://github.com</span>)</span><br><span class="line">自动生成连接  <span class="xml"><span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">www.github.com</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#x40;&#101;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;">&#101;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#x40;&#101;&#x78;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x40;&#x65;&#120;&#97;&#x6d;&#x70;&#108;&#x65;&#46;&#x63;&#111;&#109;">&#101;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x40;&#x65;&#120;&#97;&#x6d;&#x70;&#108;&#x65;&#46;&#x63;&#111;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用">区块引用</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某某说:</span><br><span class="line"><span class="blockquote">&gt; 第一行引用</span></span><br><span class="line"><span class="blockquote">&gt; 第二行费用文字</span></span><br></pre></td></tr></table></figure>
 <p><code>Control + B</code> 可插入Markdown语法。<br>效果如下：</p>
