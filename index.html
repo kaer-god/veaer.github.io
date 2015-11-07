@@ -102,7 +102,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        8
+        9
         <span>文章</span>
       </div>
       <div class="article-info-block">
@@ -133,6 +133,140 @@
 
       
       <section id="main">
+      <article id="post-15.11.07android_opt" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/07/15.11.07android_opt/">安卓性能优化s</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/11/07/15.11.07android_opt/">
+      <time datetime="2015-11-06T16:00:00.000Z" itemprop="datePublished">2015-11-07</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Android/">Android</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <h2 id="为什么我的App那么卡">为什么我的App那么卡</h2><h1 id="使用异步">使用异步</h1><ul>
+<li>保持 APP 的高度响应，不要在 UI 线程做耗时操作，多使用异步任务</li>
+<li>使用线程时要做好线程控制；使用队列、线程池</li>
+<li>谨慎使用糟糕的 AysncTask 、 Timer</li>
+<li>警惕异步任务引起的内存泄露</li>
+<li>应该异步任务分类，比如 HTTP ，图片下载，文件读写，每一类的异步任务维护一个任务队列，而不是每一个任务都开一个线程（ Volley 表示我一个可以搞定这些全部 <em>(:з」∠)</em>）</li>
+<li>这些常用的任务应该做好优先级处理（一般 JSON 数据优先于图片等静态数据的请求）</li>
+<li>一般异步任务应该开启一个 SingleAsyncTask ，保证一时只有一个线程在工作</li>
+<li>HTTP 和图片下载尽量使用同一套网络请求</li>
+<li>使用 MVP 模式规范大型 Activity 类的行为，避免异步任务造成的内存泄露</li>
+<li>避免内存泄露</li>
+</ul>
+<h1 id="了解虚拟机内存回收机制">了解虚拟机内存回收机制</h1><ul>
+<li>频繁 GC 也会造成卡顿，避免不必要的内存开销</li>
+<li>错误的引用姿♂势造成的内存泄露（啊~要泄了~）</li>
+<li>常见的 Activity 泄露（单例、 Application 、后台线程、无限动画、静态引用）</li>
+<li>Bitmap 泄露（ HoneyComb 这个问题之前压力好大）</li>
+<li>尽量使用 IntentService 代替 Service ，前者会自动 StopItself</li>
+<li>排查内存泄露问题的方法（我一直以来都是简单暴力的人肉 dump 检查大法）</li>
+<li>使用 LeakCanary 自动检查 Activity 泄露问题</li>
+<li>对内存负载要保持敏感（ Sharp ）</li>
+</ul>
+<h1 id="视图优化">视图优化</h1><ul>
+<li>布局优化、减少层次， Include Merge</li>
+<li>使用 ViewStub 避免不必要的 LayoutInflate ，使用 GONE 代替重复 LayoutInflate 同一个布局</li>
+<li>避免过度绘制，应该减少不必要的布局背景；布局层次太深会造成过度绘制以及 Measure 、 Layout 等方法时间复杂度的指数增长</li>
+<li>使用过渡动画，比如给图片的呈现加一个轻量的淡入效果会让视觉上变得流畅许多</li>
+<li>避免过度的动画，不要让一个界面同时出现多出动画，比如 List 滚动时 Item 项要停止播放动画或者 GIF</li>
+<li>复杂动画使用 SurfaceView 或 TextureView</li>
+<li>尽量提供多套分辨率的图片，使用矢量图</li>
+</ul>
+<h1 id="Adapter_优化">Adapter 优化</h1><ul>
+<li>复用 convertView ，用 ViewHolder 代替频繁 findViewById</li>
+<li>不要重复 setListener ，要使用 v.getId 来复用 Listener ，不然会创建一堆 Listener 导致频繁 GC</li>
+<li>多布局要采用 MutilItemView ，而不是使用一个大布局然后动态控制需要现实的部分</li>
+<li>不要在 getView 方法做做耗时的操作</li>
+<li>快速滚动列表的时候，可以停止加载列表项的图片，停止列表项的动画，不要在这时候改变列表项的布局</li>
+<li>尽量用 RecyclerView （增量 Notify 和 RecycledViewPool 带你飞）</li>
+</ul>
+<h1 id="代码优化">代码优化</h1><ul>
+<li>算法优化，减少时间复杂度，参考一些经典的优化算法</li>
+<li>尽量使用 int ，而不是 float 或者 double</li>
+<li>尽量采用基本类型，避免无必要的自动装箱和拆箱，浪费时间和空间</li>
+<li>选用合适的集合类（尽量以空间换时间）、选用 Android 家的 SparseArray,SparseBooleanArray 和 LongSparseArray</li>
+<li>避免创建额外的对象（ StringBuilder ）</li>
+<li>使用 SO 库完成一些比较独立的功能（高斯模糊）</li>
+<li>预处理（提前操作）一些比较耗时的初始化工作统一放到启动图处理</li>
+<li>懒加载（延迟处理）规避 Activity 的敏感生命周期</li>
+<li>Log 工具类，要在编译时删掉调试代码，而不是在运行时通过判断条件规避</li>
+<li>优先使用静态方法、公有方法还是公有方法？速度区别很大哦</li>
+<li>类内部直接对成员变量进行操作，不要使用 getter/setter 方法，调用方法耗额外的时间</li>
+<li>给内部类访问的外部类成员变量要声明称包内可访问，而不是私有，不然编译的时候还是会自动创建用于访问外部类成员变量的方法</li>
+<li>遍历集合时，使用 i++代替 Iterator ，后者需要额外的对象操作，应在循环体内避免这种情况</li>
+<li>如果一个基本类型或者 String 的值不会改变，尽量用 final static ，编译时会直接用变量的值替换变量，也就不需要在查询变量的值了</li>
+</ul>
+<h1 id="其他优化">其他优化</h1><ul>
+<li>数据库优化：使用索引、使用异步线程</li>
+<li>网络优化 …… 一堆优秀的轮子</li>
+<li>避免过度使用依赖注入框架，大量的反射</li>
+<li>不过过度设计 /抽象，多态看起来很有设计感，代价就是额外的代码、空间、时间</li>
+<li>尽量不要开启多进程，进程的开销很大</li>
+</ul>
+<h1 id="APK_瘦身">APK 瘦身</h1><ul>
+<li>开启混淆</li>
+<li>使用 zipalign 工具优化 APK</li>
+<li>适当有损图片压缩、使用矢量图</li>
+<li>删除项目中冗余的资源，之前写过一些删除没有 res 资源的脚本</li>
+<li>动态加载模块化，项目拆分啊！</li>
+</ul>
+<h1 id="性能问题的排查方法">性能问题的排查方法</h1><ul>
+<li>GPU 条形图，没事开来看看淘宝</li>
+<li>过度绘制颜色，嗯，不要一篇姨妈红就好</li>
+<li>LeakCanary ，自动检测 Activity 泄露，挺好用的</li>
+<li>TraceView （ Device Monitor ）， Systrace ，分析哪些代码占用的 CPU 时间太大，屡试不爽</li>
+<li>Lint ，检查不合理的 res 资源</li>
+<li>layoutopt （还是 optlayout ？），对当前布局提出优化建议，已被 lint 替代，但是还能用</li>
+<li>HierarchyViewer ，查看手机当前界面的布局层次，布局优化时常用（只用于模拟器，真机上用要 ROOT ，不想 ROOT 加得使用 ViewServer ）</li>
+<li>StrictMode ， UI 操作、网络操作等容易出现性能问题的地方，如果出现异常情况 StrictMode 会报警</li>
+</ul>
+<p>明天去参加北京GDG了，过的开心:)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://cheduzi.wang/2015/11/07/15.11.07android_opt/" data-id="cigp8al5r00047zs6n38c7ua6" class="article-share-link">分享到</a>
+      
+        <a href="http://cheduzi.wang/2015/11/07/15.11.07android_opt/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
       <article id="post-15.11.06glass" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -192,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheduzi.wang/2015/11/06/15.11.06glass/" data-id="cignh585c0004g5qxo0ujst11" class="article-share-link">分享到</a>
+      <a data-url="http://cheduzi.wang/2015/11/06/15.11.06glass/" data-id="cigp8al6200097zs6411hxdbm" class="article-share-link">分享到</a>
       
         <a href="http://cheduzi.wang/2015/11/06/15.11.06glass/#ds-thread" class="article-comment-link">评论</a>
       
@@ -265,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheduzi.wang/2015/11/01/15.11.01gank/" data-id="cignhzjx80005mrqxjo86v4zb" class="article-share-link">分享到</a>
+      <a data-url="http://cheduzi.wang/2015/11/01/15.11.01gank/" data-id="cigp8al65000f7zs65xn84ze5" class="article-share-link">分享到</a>
       
         <a href="http://cheduzi.wang/2015/11/01/15.11.01gank/#ds-thread" class="article-comment-link">评论</a>
       
@@ -319,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheduzi.wang/2015/10/16/15.10.20birthday/" data-id="cignh585j0005g5qx9jaiyhug" class="article-share-link">分享到</a>
+      <a data-url="http://cheduzi.wang/2015/10/16/15.10.20birthday/" data-id="cigp8al69000k7zs6ej7rtg2c" class="article-share-link">分享到</a>
       
         <a href="http://cheduzi.wang/2015/10/16/15.10.20birthday/#ds-thread" class="article-comment-link">评论</a>
       
@@ -386,7 +520,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheduzi.wang/2015/10/16/15.10.16android_tools/" data-id="cignh585o000ag5qx0kzs10sw" class="article-share-link">分享到</a>
+      <a data-url="http://cheduzi.wang/2015/10/16/15.10.16android_tools/" data-id="cigp8al6d000p7zs61k13k3o9" class="article-share-link">分享到</a>
       
         <a href="http://cheduzi.wang/2015/10/16/15.10.16android_tools/#ds-thread" class="article-comment-link">评论</a>
       
@@ -464,7 +598,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheduzi.wang/2015/10/15/15.10.15trans_head/" data-id="cignh585r000fg5qx82fxvrk0" class="article-share-link">分享到</a>
+      <a data-url="http://cheduzi.wang/2015/10/15/15.10.15trans_head/" data-id="cigp8al6h000t7zs6291jodh3" class="article-share-link">分享到</a>
       
         <a href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/#ds-thread" class="article-comment-link">评论</a>
       
@@ -527,7 +661,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheduzi.wang/2015/10/13/15.10.13float_text/" data-id="cignh585u000jg5qx23yxqzon" class="article-share-link">分享到</a>
+      <a data-url="http://cheduzi.wang/2015/10/13/15.10.13float_text/" data-id="cigp8al6l000w7zs6nudmtys7" class="article-share-link">分享到</a>
       
         <a href="http://cheduzi.wang/2015/10/13/15.10.13float_text/#ds-thread" class="article-comment-link">评论</a>
       
@@ -600,7 +734,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheduzi.wang/2015/10/03/15.10.03activity/" data-id="cignh585w000ng5qxbc026na3" class="article-share-link">分享到</a>
+      <a data-url="http://cheduzi.wang/2015/10/03/15.10.03activity/" data-id="cigp8al6o00107zs6mtz88xmj" class="article-share-link">分享到</a>
       
         <a href="http://cheduzi.wang/2015/10/03/15.10.03activity/#ds-thread" class="article-comment-link">评论</a>
       
@@ -660,7 +794,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cheduzi.wang/2015/10/01/15.10.01mark_down/" data-id="cignh585y000rg5qxh6nrxwin" class="article-share-link">分享到</a>
+      <a data-url="http://cheduzi.wang/2015/10/01/15.10.01mark_down/" data-id="cigp8al6r00147zs6mowiz8vf" class="article-share-link">分享到</a>
       
         <a href="http://cheduzi.wang/2015/10/01/15.10.01mark_down/#ds-thread" class="article-comment-link">评论</a>
       
@@ -683,6 +817,23 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/11/07/15.11.07android_opt/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Android/">Android</a></p>
+              <p class="item-title"><a href="/2015/11/07/15.11.07android_opt/" class="title">安卓性能优化s</a></p>
+              <p class="item-date"><time datetime="2015-11-06T16:00:00.000Z" itemprop="datePublished">2015-11-07</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -755,24 +906,6 @@
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/10/15/15.10.15trans_head/" class="thumbnail">
-  
-    <span style="background-image:url(http://77fkpo.com5.z0.glb.clouddn.com/e051c31ac90cfc41c60c81fb11020e83.png
-)" alt="关于沉浸式状态栏" class="thumbnail-image"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Android/">Android</a></p>
-              <p class="item-title"><a href="/2015/10/15/15.10.15trans_head/" class="title">关于沉浸式状态栏</a></p>
-              <p class="item-date"><time datetime="2015-10-14T16:00:00.000Z" itemprop="datePublished">2015-10-15</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -782,7 +915,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Gank/" style="font-size: 10px;">Gank</a> <a href="/tags/TextInputLayout/" style="font-size: 10px;">TextInputLayout</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/开源/" style="font-size: 20px;">开源</a> <a href="/tags/沉浸式状态栏/" style="font-size: 20px;">沉浸式状态栏</a> <a href="/tags/生命周期/" style="font-size: 10px;">生命周期</a> <a href="/tags/生日/" style="font-size: 10px;">生日</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
+      <a href="/tags/Gank/" style="font-size: 10px;">Gank</a> <a href="/tags/TextInputLayout/" style="font-size: 10px;">TextInputLayout</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/开源/" style="font-size: 20px;">开源</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/沉浸式状态栏/" style="font-size: 20px;">沉浸式状态栏</a> <a href="/tags/生命周期/" style="font-size: 10px;">生命周期</a> <a href="/tags/生日/" style="font-size: 10px;">生日</a> <a href="/tags/语法/" style="font-size: 10px;">语法</a>
     </div>
   </div>
 
@@ -791,7 +924,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂记/">杂记</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂记/">杂记</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -800,7 +933,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gank/">Gank</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TextInputLayout/">TextInputLayout</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源/">开源</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/沉浸式状态栏/">沉浸式状态栏</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生命周期/">生命周期</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生日/">生日</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语法/">语法</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gank/">Gank</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TextInputLayout/">TextInputLayout</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源/">开源</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/沉浸式状态栏/">沉浸式状态栏</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生命周期/">生命周期</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生日/">生日</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/语法/">语法</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -809,7 +942,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
