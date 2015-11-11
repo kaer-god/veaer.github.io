@@ -151,7 +151,9 @@ a:focus {
   color: #888; }
 
 .post {
-  padding: 25px 0 15px; }
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd; }
   .post .post-title {
     margin: 0;
     color: #555;
