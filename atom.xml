@@ -3,9 +3,9 @@
   <title><![CDATA[Veaer]]></title>
   <subtitle><![CDATA[王小二的栖身之所]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://cheduzi.wang/"/>
+  <link href="http://veaer.com/"/>
   <updated>2015-11-10T11:02:17.000Z</updated>
-  <id>http://cheduzi.wang/</id>
+  <id>http://veaer.com/</id>
   
   <author>
     <name><![CDATA[Veaer]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[安卓性能优化s]]></title>
-    <link href="http://cheduzi.wang/2015/11/07/15.11.07android_opt/"/>
-    <id>http://cheduzi.wang/2015/11/07/15.11.07android_opt/</id>
+    <link href="http://veaer.com/2015/11/07/15.11.07android_opt/"/>
+    <id>http://veaer.com/2015/11/07/15.11.07android_opt/</id>
     <published>2015-11-06T16:00:00.000Z</published>
     <updated>2015-11-10T11:02:17.000Z</updated>
     <content type="html"><![CDATA[<h2 id="为什么我的App那么卡">为什么我的App那么卡</h2><h1 id="使用异步">使用异步</h1><ul>
@@ -107,19 +107,19 @@
 <li>使用线程时要做好线程控制；使用队列、线程池</li>]]>
     </summary>
     
-      <category term="性能优化" scheme="http://cheduzi.wang/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+      <category term="性能优化" scheme="http://veaer.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
-      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+      <category term="Android" scheme="http://veaer.com/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[第一个开源库Glass]]></title>
-    <link href="http://cheduzi.wang/2015/11/06/15.11.06glass/"/>
-    <id>http://cheduzi.wang/2015/11/06/15.11.06glass/</id>
+    <link href="http://veaer.com/2015/11/06/15.11.06glass/"/>
+    <id>http://veaer.com/2015/11/06/15.11.06glass/</id>
     <published>2015-11-05T16:00:00.000Z</published>
     <updated>2015-11-06T10:44:56.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="在安卓4-4之后，开始有了『沉浸式状态栏』这个说法">在安卓4.4之后，开始有了『沉浸式状态栏』这个说法</h2><p>上次在<a href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/">关于沉浸式状态栏</a>这篇文章中讲了一下我在适配4.4-5.0之间版本的APP的状态栏的方法，这段时间，我整理了一下，把这个小方法抽成了一个库，发布到了 maven。</p>
+    <content type="html"><![CDATA[<h2 id="在安卓4-4之后，开始有了『沉浸式状态栏』这个说法">在安卓4.4之后，开始有了『沉浸式状态栏』这个说法</h2><p>上次在<a href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/" target="_blank" rel="external">关于沉浸式状态栏</a>这篇文章中讲了一下我在适配4.4-5.0之间版本的APP的状态栏的方法，这段时间，我整理了一下，把这个小方法抽成了一个库，发布到了 maven。</p>
 <p>不知道什么叫做”沉浸式状态栏”、”translucent status bar”、”translucent system bar”</p>
 <p>在5.0以下解放状态栏的App其实并不多，例如ES文件管理器、豌豆荚、最美应用</p>
 <p><img src="/assets/post/151106/head.jpg" width="500" height="300"></p>
@@ -141,21 +141,21 @@
 <p>demo地址： <a href="http://fir.im/vGlass" target="_blank" rel="external">点我</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="在安卓4-4之后，开始有了『沉浸式状态栏』这个说法">在安卓4.4之后，开始有了『沉浸式状态栏』这个说法</h2><p>上次在<a href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/">关于沉浸式状态栏]]>
+    <![CDATA[<h2 id="在安卓4-4之后，开始有了『沉浸式状态栏』这个说法">在安卓4.4之后，开始有了『沉浸式状态栏』这个说法</h2><p>上次在<a href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/" target="]]>
     </summary>
     
-      <category term="开源" scheme="http://cheduzi.wang/tags/%E5%BC%80%E6%BA%90/"/>
+      <category term="开源" scheme="http://veaer.com/tags/%E5%BC%80%E6%BA%90/"/>
     
-      <category term="沉浸式状态栏" scheme="http://cheduzi.wang/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%8A%B6%E6%80%81%E6%A0%8F/"/>
+      <category term="沉浸式状态栏" scheme="http://veaer.com/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%8A%B6%E6%80%81%E6%A0%8F/"/>
     
-      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+      <category term="Android" scheme="http://veaer.com/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[第一个开源项目Gank]]></title>
-    <link href="http://cheduzi.wang/2015/11/01/15.11.01gank/"/>
-    <id>http://cheduzi.wang/2015/11/01/15.11.01gank/</id>
+    <link href="http://veaer.com/2015/11/01/15.11.01gank/"/>
+    <id>http://veaer.com/2015/11/01/15.11.01gank/</id>
     <published>2015-10-31T16:00:00.000Z</published>
     <updated>2015-11-06T10:37:49.000Z</updated>
     <content type="html"><![CDATA[<h2 id="造福万民的代(肥)码(皂)家又做了件好事">造福万民的代(肥)码(皂)家又做了件好事</h2><p><a href="http://gank.io/" target="_blank" rel="external">干货集中营</a>每日分享妹子图 和 技术干货，还有供大家中午休息的休闲视频。</p>
@@ -182,18 +182,18 @@
     <![CDATA[<h2 id="造福万民的代(肥)码(皂)家又做了件好事">造福万民的代(肥)码(皂)家又做了件好事</h2><p><a href="http://gank.io/" target="_blank" rel="external">干货集中营</a>每日分享妹子图 和 技术干货，还]]>
     </summary>
     
-      <category term="Gank" scheme="http://cheduzi.wang/tags/Gank/"/>
+      <category term="Gank" scheme="http://veaer.com/tags/Gank/"/>
     
-      <category term="开源" scheme="http://cheduzi.wang/tags/%E5%BC%80%E6%BA%90/"/>
+      <category term="开源" scheme="http://veaer.com/tags/%E5%BC%80%E6%BA%90/"/>
     
-      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+      <category term="Android" scheme="http://veaer.com/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[2015年 秋]]></title>
-    <link href="http://cheduzi.wang/2015/10/16/15.10.20birthday/"/>
-    <id>http://cheduzi.wang/2015/10/16/15.10.20birthday/</id>
+    <link href="http://veaer.com/2015/10/16/15.10.20birthday/"/>
+    <id>http://veaer.com/2015/10/16/15.10.20birthday/</id>
     <published>2015-10-15T16:00:00.000Z</published>
     <updated>2015-10-27T12:33:27.000Z</updated>
     <content type="html"><![CDATA[<embed src="http://www.xiami.com/widget/0_1774946504/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="transparent">]]></content>
@@ -201,16 +201,16 @@
     <![CDATA[<embed src="http://www.xiami.com/widget/0_1774946504/singlePlayer.swf" type="application/x-shockwave-flash" width="257" height="33" wmode="t]]>
     </summary>
     
-      <category term="生日" scheme="http://cheduzi.wang/tags/%E7%94%9F%E6%97%A5/"/>
+      <category term="生日" scheme="http://veaer.com/tags/%E7%94%9F%E6%97%A5/"/>
     
-      <category term="杂记" scheme="http://cheduzi.wang/categories/%E6%9D%82%E8%AE%B0/"/>
+      <category term="杂记" scheme="http://veaer.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[ListView实时预览以及图文控件]]></title>
-    <link href="http://cheduzi.wang/2015/10/16/15.10.16android_tools/"/>
-    <id>http://cheduzi.wang/2015/10/16/15.10.16android_tools/</id>
+    <link href="http://veaer.com/2015/10/16/15.10.16android_tools/"/>
+    <id>http://veaer.com/2015/10/16/15.10.16android_tools/</id>
     <published>2015-10-15T16:00:00.000Z</published>
     <updated>2015-10-27T12:33:45.000Z</updated>
     <content type="html"><![CDATA[<h2 id="ListView">ListView</h2><p>之前写ListView的时候，是在整体布局文件中加入listVew控件，然后去另一个布局文件中写单个item的布局，脑补listview会长成的样子，在AS的预览框中你看到的可能是</p>
@@ -232,16 +232,16 @@
 <p><img src]]>
     </summary>
     
-      <category term="tools" scheme="http://cheduzi.wang/tags/tools/"/>
+      <category term="tools" scheme="http://veaer.com/tags/tools/"/>
     
-      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+      <category term="Android" scheme="http://veaer.com/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[关于沉浸式状态栏]]></title>
-    <link href="http://cheduzi.wang/2015/10/15/15.10.15trans_head/"/>
-    <id>http://cheduzi.wang/2015/10/15/15.10.15trans_head/</id>
+    <link href="http://veaer.com/2015/10/15/15.10.15trans_head/"/>
+    <id>http://veaer.com/2015/10/15/15.10.15trans_head/</id>
     <published>2015-10-14T16:00:00.000Z</published>
     <updated>2015-11-06T10:44:56.000Z</updated>
     <content type="html"><![CDATA[<h2 id="在安卓4-4之后，开始有了『沉浸式状态栏』这个说法">在安卓4.4之后，开始有了『沉浸式状态栏』这个说法</h2><p>但是我觉得它实现的效果更像是单纯的全屏模式更像一些</p>
@@ -274,16 +274,16 @@
 <p>这里有篇文章<a href="http://blog.csdn.net/sdv]]>
     </summary>
     
-      <category term="沉浸式状态栏" scheme="http://cheduzi.wang/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%8A%B6%E6%80%81%E6%A0%8F/"/>
+      <category term="沉浸式状态栏" scheme="http://veaer.com/tags/%E6%B2%89%E6%B5%B8%E5%BC%8F%E7%8A%B6%E6%80%81%E6%A0%8F/"/>
     
-      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+      <category term="Android" scheme="http://veaer.com/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[一个开源项目float_text]]></title>
-    <link href="http://cheduzi.wang/2015/10/13/15.10.13float_text/"/>
-    <id>http://cheduzi.wang/2015/10/13/15.10.13float_text/</id>
+    <link href="http://veaer.com/2015/10/13/15.10.13float_text/"/>
+    <id>http://veaer.com/2015/10/13/15.10.13float_text/</id>
     <published>2015-10-12T16:00:00.000Z</published>
     <updated>2015-10-27T12:34:12.000Z</updated>
     <content type="html"><![CDATA[<p>在注册、登录以及一些表单填写的时候，会下意识地做一些动态效果上去，就像：</p>
@@ -301,16 +301,16 @@
 <p><img src="http://77fkpo.com5.z0.glb.clouddn.com/46aed824f870cb3b8747a7c6d2d0bd85.jpg" width="]]>
     </summary>
     
-      <category term="TextInputLayout" scheme="http://cheduzi.wang/tags/TextInputLayout/"/>
+      <category term="TextInputLayout" scheme="http://veaer.com/tags/TextInputLayout/"/>
     
-      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+      <category term="Android" scheme="http://veaer.com/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[关于Activity]]></title>
-    <link href="http://cheduzi.wang/2015/10/03/15.10.03activity/"/>
-    <id>http://cheduzi.wang/2015/10/03/15.10.03activity/</id>
+    <link href="http://veaer.com/2015/10/03/15.10.03activity/"/>
+    <id>http://veaer.com/2015/10/03/15.10.03activity/</id>
     <published>2015-10-02T16:00:00.000Z</published>
     <updated>2015-11-06T10:39:35.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Activity的生命周期">Activity的生命周期</h2><p>这个话题太常见了，随便谷歌一下就能看到一大堆答案</p>
@@ -338,16 +338,16 @@
 <p>st=&gt;start: Activity启动<br>e=&gt;end: Activity销毁<br>create=&gt;]]>
     </summary>
     
-      <category term="生命周期" scheme="http://cheduzi.wang/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+      <category term="生命周期" scheme="http://veaer.com/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     
-      <category term="Android" scheme="http://cheduzi.wang/categories/Android/"/>
+      <category term="Android" scheme="http://veaer.com/categories/Android/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Markdown介绍]]></title>
-    <link href="http://cheduzi.wang/2015/10/01/15.10.01mark_down/"/>
-    <id>http://cheduzi.wang/2015/10/01/15.10.01mark_down/</id>
+    <link href="http://veaer.com/2015/10/01/15.10.01mark_down/"/>
+    <id>http://veaer.com/2015/10/01/15.10.01mark_down/</id>
     <published>2015-09-30T16:00:00.000Z</published>
     <updated>2015-10-27T12:34:27.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Markdown_语法和_MWeb_写作使用说明">Markdown 语法和 MWeb 写作使用说明</h1><h2 id="Markdown_的设计哲学">Markdown 的设计哲学</h2><blockquote>
@@ -401,7 +401,7 @@
 <h2 id="链接">链接</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">email <span class="xml"><span class="tag">&lt;<span class="title">example@example.com</span>&gt;</span></span></span><br><span class="line">[<span class="link_label">GitHub</span>](<span class="link_url">http://github.com</span>)</span><br><span class="line">自动生成连接  <span class="xml"><span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">www.github.com</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;">&#x65;&#120;&#x61;&#109;&#x70;&#x6c;&#101;&#x40;&#x65;&#x78;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#64;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#46;&#x63;&#111;&#x6d;">&#x65;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#64;&#101;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#46;&#x63;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用">区块引用</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某某说:</span><br><span class="line"><span class="blockquote">&gt; 第一行引用</span></span><br><span class="line"><span class="blockquote">&gt; 第二行费用文字</span></span><br></pre></td></tr></table></figure>
 <p><code>Control + B</code> 可插入Markdown语法。<br>效果如下：</p>
@@ -485,9 +485,9 @@
     
     </summary>
     
-      <category term="语法" scheme="http://cheduzi.wang/tags/%E8%AF%AD%E6%B3%95/"/>
+      <category term="语法" scheme="http://veaer.com/tags/%E8%AF%AD%E6%B3%95/"/>
     
-      <category term="Markdown" scheme="http://cheduzi.wang/categories/Markdown/"/>
+      <category term="Markdown" scheme="http://veaer.com/categories/Markdown/"/>
     
   </entry>
   
