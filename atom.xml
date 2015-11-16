@@ -4,7 +4,7 @@
   <subtitle><![CDATA[王小二的栖身之所]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://veaer.com/"/>
-  <updated>2015-11-10T11:02:17.000Z</updated>
+  <updated>2015-11-16T08:31:25.000Z</updated>
   <id>http://veaer.com/</id>
   
   <author>
@@ -15,11 +15,54 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[安卓性能优化s]]></title>
+    <title><![CDATA[Activity启动模式]]></title>
+    <link href="http://veaer.com/2015/11/13/15.11.13launch_mode/"/>
+    <id>http://veaer.com/2015/11/13/15.11.13launch_mode/</id>
+    <published>2015-11-12T16:00:00.000Z</published>
+    <updated>2015-11-16T08:31:25.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Activity的LaunchMode">Activity的LaunchMode</h2><p>对于大部分刚接触 Android 的人，好像并不大会关注 Activity的启动模式。</p>
+<p><code>android:launchMode</code></p>
+<p>当前 Activity 启动另一个 Activity 时，新的Activity 会被推送到堆栈顶部，成为焦点所在。</p>
+<p> 前一个 Activity 仍保留在堆栈中，但是处于停止状态。</p>
+<p>Activity 停止时，系统会保持其用户界面的当前状态。 </p>
+<p>用户按“返回”按钮时，当前 Activity 会从堆栈顶部弹出（Activity 被销毁），而前一个 Activity 恢复执行（恢复其 UI 的前一状态）。</p>
+<p>堆栈中的 Activity 永远不会重新排列，仅推入和弹出堆栈：启动新的 Activity 将其推入堆栈；用户使用“返回”按钮退出时，Activity 销毁弹出堆栈。</p>
+<p>因此，返回栈以“后进先出”对象结构运行。</p>
+<p><img src="/assets/post/151113/backstack.png" width="500" height="170"></p>
+<p>Activity 的启动模式有四种：standard、singleTop、singleTask、singleInstance。</p>
+<ol>
+<li><p>standard:</p>
+<p>这是 Activity 默认的启动模式，你可以不用在清单文件中专门指明这个模式，系统在启动 Activity 的任务中创建 Activity 的新实例并向其传送 Intent，将其置于栈顶。Activity 可以多次实例化，而每个实例均可属于不同的任务，并且一个任务可以拥有多个实例。</p>
+</li>
+<li><p>singleTop:</p>
+<p>如果你要启动的 Activity 并没有处于当前栈顶，就会启动一个新的 Activity。</p>
+</li>
+<li><p>singleTask:</p>
+<p>如果你要启动的 Activity 存在于当前任务栈中，不论是否处于栈顶，都会直接唤起当前已经存在的 Activity 而不会去新建，并且还会将这个 Activity 到栈顶之间的所有 Activity 都出栈。</p>
+</li>
+<li><p>singleInstance:</p>
+<p>这个模式有点『特殊』，之前的三种启动模式，无论是新建，还是从栈里寻找，都是基于一个栈的，如果启动模式设置为singleInstance，那么这个新建的 Activity 会出现在一个新的栈里。</p>
+<p>举个栗子，现在有三个 activity：A/B/C，其中 B 设置为 singleInstance，A/C为默认 standard，启动顺序为 A 启动 B，B 启动 C，那么当前页面在C 上面，现在按下back 按键，你会发现很神奇的 C 销毁之后，出现的并不是B，而是 A，当 A 再销毁之后，出现的才是 B。因为 A/C 是在同一个栈中的，C 销毁（出栈）之后，A 就露出了。</p>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Activity的LaunchMode">Activity的LaunchMode</h2><p>对于大部分刚接触 Android 的人，好像并不大会关注 Activity的启动模式。</p>
+<p><code>android:launchMode</code></]]>
+    </summary>
+    
+      <category term="启动模式" scheme="http://veaer.com/tags/%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="重新开始学Android" scheme="http://veaer.com/categories/%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%E5%AD%A6Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[安卓性能优化]]></title>
     <link href="http://veaer.com/2015/11/07/15.11.07android_opt/"/>
     <id>http://veaer.com/2015/11/07/15.11.07android_opt/</id>
     <published>2015-11-06T16:00:00.000Z</published>
-    <updated>2015-11-10T11:02:17.000Z</updated>
+    <updated>2015-11-13T07:36:12.000Z</updated>
     <content type="html"><![CDATA[<h2 id="为什么我的App那么卡">为什么我的App那么卡</h2><h1 id="使用异步">使用异步</h1><ul>
 <li>保持 APP 的高度响应，不要在 UI 线程做耗时操作，多使用异步任务</li>
 <li>使用线程时要做好线程控制；使用队列、线程池</li>
@@ -312,7 +355,7 @@
     <link href="http://veaer.com/2015/10/03/15.10.03activity/"/>
     <id>http://veaer.com/2015/10/03/15.10.03activity/</id>
     <published>2015-10-02T16:00:00.000Z</published>
-    <updated>2015-11-06T10:39:35.000Z</updated>
+    <updated>2015-11-13T07:36:58.000Z</updated>
     <content type="html"><![CDATA[<h2 id="Activity的生命周期">Activity的生命周期</h2><p>这个话题太常见了，随便谷歌一下就能看到一大堆答案</p>
 <p>st=&gt;start: Activity启动<br>e=&gt;end: Activity销毁<br>create=&gt;operation: onCreate<br>start=&gt;operation: onStart(未显示)<br>resume=&gt;operation: onResume(已经显示)<br>pause=&gt;operation: onPause<br>stop=&gt;operation: onStop<br>destory=&gt;operation: onDestory</p>
 <p>st-&gt;create-&gt;start-&gt;resume-&gt;pause-&gt;stop-&gt;destory-&gt;e</p>
@@ -340,7 +383,7 @@
     
       <category term="生命周期" scheme="http://veaer.com/tags/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     
-      <category term="Android" scheme="http://veaer.com/categories/Android/"/>
+      <category term="重新开始学Android" scheme="http://veaer.com/categories/%E9%87%8D%E6%96%B0%E5%BC%80%E5%A7%8B%E5%AD%A6Android/"/>
     
   </entry>
   
@@ -401,7 +444,7 @@
 <h2 id="链接">链接</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">email <span class="xml"><span class="tag">&lt;<span class="title">example@example.com</span>&gt;</span></span></span><br><span class="line">[<span class="link_label">GitHub</span>](<span class="link_url">http://github.com</span>)</span><br><span class="line">自动生成连接  <span class="xml"><span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">www.github.com</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x65;&#120;&#97;&#109;&#x70;&#108;&#101;&#x40;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;">&#x65;&#120;&#97;&#109;&#x70;&#108;&#101;&#x40;&#x65;&#120;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#x63;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x40;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#x6f;&#109;">&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x40;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#x6f;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用">区块引用</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某某说:</span><br><span class="line"><span class="blockquote">&gt; 第一行引用</span></span><br><span class="line"><span class="blockquote">&gt; 第二行费用文字</span></span><br></pre></td></tr></table></figure>
 <p><code>Control + B</code> 可插入Markdown语法。<br>效果如下：</p>
