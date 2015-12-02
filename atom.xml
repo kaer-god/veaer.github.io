@@ -4,7 +4,7 @@
   <subtitle><![CDATA[王小二的栖身之所]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://veaer.com/"/>
-  <updated>2015-11-17T14:27:31.000Z</updated>
+  <updated>2015-12-02T10:57:06.000Z</updated>
   <id>http://veaer.com/</id>
   
   <author>
@@ -13,6 +13,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[扯一下MVP]]></title>
+    <link href="http://veaer.com/2015/12/01/15.12.01android_mvp/"/>
+    <id>http://veaer.com/2015/12/01/15.12.01android_mvp/</id>
+    <published>2015-11-30T16:00:00.000Z</published>
+    <updated>2015-12-02T10:57:06.000Z</updated>
+    <content type="html"><![CDATA[<p>这几天 Android 的 MVP火得风生水起的，我也写个东西来记录一下。</p>
+<p>从大学里学习编程以来，一直在被老师们教导 MVC(model-view-controller)，参加工作之后，写了一年的 web，前后写过 AngularJS、AvalonJS、VueJS，这一堆前端框架都充塞着 MVVM(model-view-view-model) 的思想，再加上 Google 新推出的 data-binding，也在向着MVVM 靠拢，虽然还有坑，但是不得不让人觉得，好像安卓又迎来了新的改革之春。</p>
+<p>安卓开发，本来也大都是尊崇 MVC的，只是 activity 在 view 层和 controller 层徘徊，也是有些尴尬。MVP 作为 MVC的一个变种，对应的意义为 model-view-presenter，模型-视图-表示器。</p>
+<p>mvc 与 mvp 最大的不同就是 view 层不会与 model 层发生直接关系，所有的逻辑都由 presenter 层来处理分发，这一层接收来自 view 层的”指令”。</p>
+<p><img src="http://www.jcodecraeer.com/uploads/20150227/1424969040503730.png" width="435" height="347"></p>
+<p>参照了一下网上各路英豪对 MVP 的文章，直白地讲，我的理解就是，在 activity 层准备好各种基本方法，将点击事件作为一个指令，调用 presenter 层的方法，逻辑写在 presenter 层。</p>
+<p>多说无益，上 github地址<a href="https://github.com/Veaer/Blog_demo/tree/master/app/src/main/java/com/veaer/blog/mvp" target="_blank" rel="external">登录Demo</a>。</p>
+<p>这种写法会增加很多接口文件，例如会将activity要实现的基本方法都在一个接口中声明，但是会让逻辑更加清晰。</p>
+<p>反正，不管怎样，各种模式都是为了下面的目的：</p>
+<blockquote>
+<ul>
+<li>易于维护</li>
+<li>易于测试</li>
+<li>降低耦合</li>
+<li>提高复用</li>
+<li>健壮稳定</li>
+</ul>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这几天 Android 的 MVP火得风生水起的，我也写个东西来记录一下。</p>
+<p>从大学里学习编程以来，一直在被老师们教导 MVC(model-view-controller)，参加工作之后，写了一年的 web，前后写过 AngularJS、AvalonJS、Vue]]>
+    </summary>
+    
+      <category term="架构模式" scheme="http://veaer.com/tags/%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="Android" scheme="http://veaer.com/categories/Android/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Activity启动模式]]></title>
@@ -80,7 +116,7 @@
     <link href="http://veaer.com/2015/11/07/15.11.07android_opt/"/>
     <id>http://veaer.com/2015/11/07/15.11.07android_opt/</id>
     <published>2015-11-06T16:00:00.000Z</published>
-    <updated>2015-11-13T07:36:12.000Z</updated>
+    <updated>2015-12-02T10:54:07.000Z</updated>
     <content type="html"><![CDATA[<h2 id="为什么我的App那么卡">为什么我的App那么卡</h2><h1 id="使用异步">使用异步</h1><ul>
 <li>保持 APP 的高度响应，不要在 UI 线程做耗时操作，多使用异步任务</li>
 <li>使用线程时要做好线程控制；使用队列、线程池</li>
@@ -273,7 +309,7 @@
     <link href="http://veaer.com/2015/10/16/15.10.16android_tools/"/>
     <id>http://veaer.com/2015/10/16/15.10.16android_tools/</id>
     <published>2015-10-15T16:00:00.000Z</published>
-    <updated>2015-10-27T12:33:45.000Z</updated>
+    <updated>2015-12-02T10:53:56.000Z</updated>
     <content type="html"><![CDATA[<h2 id="ListView">ListView</h2><p>之前写ListView的时候，是在整体布局文件中加入listVew控件，然后去另一个布局文件中写单个item的布局，脑补listview会长成的样子，在AS的预览框中你看到的可能是</p>
 <p><img src="http://77fkpo.com5.z0.glb.clouddn.com/6c621612138ca4255844c8bb3520f3f0.png" width="250" height="400"></p>
 <p>然而只能将应用跑起来才能看到你想要的效果，这时候如果引入一个命名空间<code>xmlns:tools=&quot;http://schemas.android.com/tools&quot;</code>，然后稍微修改一下你的listview代码</p>
@@ -304,7 +340,7 @@
     <link href="http://veaer.com/2015/10/15/15.10.15trans_head/"/>
     <id>http://veaer.com/2015/10/15/15.10.15trans_head/</id>
     <published>2015-10-14T16:00:00.000Z</published>
-    <updated>2015-11-06T10:44:56.000Z</updated>
+    <updated>2015-12-02T10:53:53.000Z</updated>
     <content type="html"><![CDATA[<h2 id="在安卓4-4之后，开始有了『沉浸式状态栏』这个说法">在安卓4.4之后，开始有了『沉浸式状态栏』这个说法</h2><p>但是我觉得它实现的效果更像是单纯的全屏模式更像一些</p>
 <p>这里有篇文章<a href="http://blog.csdn.net/sdvch/article/details/44209959" target="_blank" rel="external">使用全屏沉浸模式（Using Immersive Full-Screen Mode）</a>来讲述利用setSystemUiVisibility()方法，实现『沉浸』的过程，我觉得这种『沉浸式』可以用来开发视频播放的Acivity，它和<code>android:theme=&quot;@android:style/Theme.NoTitleBar.Fullscreen&quot;</code>的区别好像就在于前者的触摸操作会退出全屏</p>
 <p><img src="http://77fkpo.com5.z0.glb.clouddn.com/e051c31ac90cfc41c60c81fb11020e83.png" width="400" height="200"></p>
@@ -346,7 +382,7 @@
     <link href="http://veaer.com/2015/10/13/15.10.13float_text/"/>
     <id>http://veaer.com/2015/10/13/15.10.13float_text/</id>
     <published>2015-10-12T16:00:00.000Z</published>
-    <updated>2015-10-27T12:34:12.000Z</updated>
+    <updated>2015-12-02T10:53:48.000Z</updated>
     <content type="html"><![CDATA[<p>在注册、登录以及一些表单填写的时候，会下意识地做一些动态效果上去，就像：</p>
 <p><img src="http://77fkpo.com5.z0.glb.clouddn.com/46aed824f870cb3b8747a7c6d2d0bd85.jpg" width="400" height="300"></p>
 <p>在谷歌还没发布design包之前，在github上有一个类似的开源库<a href="https://github.com/wrapp/floatlabelededittext" target="_blank" rel="external">floatlabelededittext</a></p>
@@ -410,7 +446,7 @@
     <link href="http://veaer.com/2015/10/01/15.10.01mark_down/"/>
     <id>http://veaer.com/2015/10/01/15.10.01mark_down/</id>
     <published>2015-09-30T16:00:00.000Z</published>
-    <updated>2015-10-27T12:34:27.000Z</updated>
+    <updated>2015-12-02T10:53:35.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Markdown_语法和_MWeb_写作使用说明">Markdown 语法和 MWeb 写作使用说明</h1><h2 id="Markdown_的设计哲学">Markdown 的设计哲学</h2><blockquote>
 <p>Markdown 的目標是實現「易讀易寫」。<br>不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。<br>Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
 </blockquote>
@@ -462,7 +498,7 @@
 <h2 id="链接">链接</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">email <span class="xml"><span class="tag">&lt;<span class="title">example@example.com</span>&gt;</span></span></span><br><span class="line">[<span class="link_label">GitHub</span>](<span class="link_url">http://github.com</span>)</span><br><span class="line">自动生成连接  <span class="xml"><span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">www.github.com</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#109;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#101;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#x65;&#120;&#x61;&#109;&#x70;&#108;&#101;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#101;&#x78;&#x61;&#109;&#112;&#108;&#101;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#108;&#101;&#46;&#99;&#111;&#x6d;">&#101;&#x78;&#x61;&#109;&#112;&#108;&#101;&#x40;&#101;&#120;&#97;&#x6d;&#112;&#108;&#101;&#46;&#99;&#111;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用">区块引用</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某某说:</span><br><span class="line"><span class="blockquote">&gt; 第一行引用</span></span><br><span class="line"><span class="blockquote">&gt; 第二行费用文字</span></span><br></pre></td></tr></table></figure>
 <p><code>Control + B</code> 可插入Markdown语法。<br>效果如下：</p>
@@ -548,7 +584,7 @@
     
       <category term="语法" scheme="http://veaer.com/tags/%E8%AF%AD%E6%B3%95/"/>
     
-      <category term="Markdown" scheme="http://veaer.com/categories/Markdown/"/>
+      <category term="杂记" scheme="http://veaer.com/categories/%E6%9D%82%E8%AE%B0/"/>
     
   </entry>
   
