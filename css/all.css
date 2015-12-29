@@ -3443,6 +3443,13 @@ footer .footer_bottom {
 .icon-facebook:before { content: "\e62f"; }
 .icon-sina-weibo:before { content: "\e666"; }
 .icon-github:before { content: "\e636"; }
+/* Veaer */
+.archives-block {
+    border: 1px solid #fff;
+}
+.archives-block:hover {
+    border: 1px solid #000;
+}
 /*---------------- END ------------------------*/
 @charset "utf-8";
 /* CSS Document */
