@@ -4,7 +4,7 @@
   <subtitle><![CDATA[王扒蒜的那个网站]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://veaer.com/"/>
-  <updated>2015-12-28T11:06:57.000Z</updated>
+  <updated>2015-12-31T16:50:04.000Z</updated>
   <id>http://veaer.com/</id>
   
   <author>
@@ -13,6 +13,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[嘿，你还好么]]></title>
+    <link href="http://veaer.com/2016/01/01/16.01.01hello/"/>
+    <id>http://veaer.com/2016/01/01/16.01.01hello/</id>
+    <published>2015-12-31T16:00:00.000Z</published>
+    <updated>2015-12-31T16:50:04.000Z</updated>
+    <content type="html"><![CDATA[<embed src="http://music.163.com/style/swf/widget.swf?sid=31260616&type=2&auto=1&width=320&height=66" width="340" height="86" allownetworking="all">
+
+<p>嘿，你还好么。</p>
+<p>没我在你身边，你和谁一起跨年了呢。</p>
+<p>又是一年的流水账，到了跨年，总得唠叨唠叨。</p>
+<p>从哪儿开始说呢。</p>
+<p><code>岁月是一场有去无回的旅行，好的坏的都是风景</code></p>
+<p>丢了一些人，不是丢人，是真的丢了人。</p>
+<p>丢了一些钱，不是丢了，是真的丢了。</p>
+<p>长了些见识，这倒是真的。</p>
+<p><code>我有双不听任何命令的耳朵，去享受快乐加上自由的我</code></p>
+<p>和复杂的人交朋友，和简单的人过日子。</p>
+<p>好烦。</p>
+<p>刚毕业那几个月砸锅卖铁还上了助学贷款，谢谢帮助过我的老板。</p>
+<p>现在在北京城饿不死了，也冻不着了。</p>
+<p>家里的事还是一团麻，底线是三十，今年我二十三。</p>
+<p>不单说元旦，就说春节，去年的年过的很悲伤，全家人都没有什么喜色。</p>
+<p>今年或许也是吧，也不期待春节之前的剩下那一个月里能发生什么大事。</p>
+<p>好烦。</p>
+<p><code>倔强地守着一件事，日复一日</code></p>
+<p>身体好得很，鸣哥考研结束了，反正我有医生哥们，我要是有三长两短，有他好看的。</p>
+<p>除了体重。</p>
+<p>好烦，不，这个不烦了，我认命了。</p>
+<p>治不好的病，那是命。</p>
+<p><code>风吹动他的从前，还有梦没有实现</code></p>
+<p>多读书，多写代码，我还是个程序猿，不，工程狮。</p>
+<p>不是为了成为大牛，很简单的，我要挣钱。</p>
+<p>爸妈都该歇着了。</p>
+<p><code>回忆撕毁臆想，路上行走匆忙</code></p>
+<p>往事已矣。</p>
+<p>最近生活加了好多乐趣。</p>
+<p>生活与书，要多看看这个多彩的世界啊。</p>
+<p>主要是因为 Kindle 挺贵的，不能白花钱。</p>
+<p><code>从前的日色变得慢，车马邮件都慢</code></p>
+<p>最后总结吧。</p>
+<p>全篇没写出啥东西来。</p>
+<p>得之我幸，失之我幸。</p>
+<p>很高兴遇见你，我的朋友。</p>
+<p>听说一个人一直在炫耀的就是他最怕失去的。</p>
+<p>暗影萨满总是说『Don’t worry, be happy』</p>
+<p>开心就好，骗谁呢，鬼都不信。</p>
+<p>谢谢身边人的不离不弃。</p>
+<p>2016我还是要在你们身边好好的活着。</p>
+<p>谢谢陪我跨年的。</p>
+<p>谢谢。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<embed src="http://music.163.com/style/swf/widget.swf?sid=31260616&type=2&auto=1&width=320&height=66" width="340" height="86" allownetworkin]]>
+    </summary>
+    
+      <category term="元旦" scheme="http://veaer.com/tags/%E5%85%83%E6%97%A6/"/>
+    
+      <category term="杂记" scheme="http://veaer.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[我的利器]]></title>
@@ -659,7 +721,7 @@
 <h2 id="链接">链接</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">email <span class="xml"><span class="tag">&lt;<span class="title">example@example.com</span>&gt;</span></span></span><br><span class="line">[<span class="link_label">GitHub</span>](<span class="link_url">http://github.com</span>)</span><br><span class="line">自动生成连接  <span class="xml"><span class="tag">&lt;<span class="title">http:</span>//<span class="attribute">www.github.com</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;">&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#101;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#x6d;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;&#101;&#64;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;">&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;&#101;&#64;&#101;&#120;&#97;&#109;&#x70;&#x6c;&#x65;&#x2e;&#x63;&#111;&#109;</a><br><a href="http://github.com" target="_blank" rel="external">连接标题Github网站</a><br>自动生成连接像： <a href="http://www.github.com/" target="_blank" rel="external">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用">区块引用</h2><p>Markdown 语法：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某某说:</span><br><span class="line"><span class="blockquote">&gt; 第一行引用</span></span><br><span class="line"><span class="blockquote">&gt; 第二行费用文字</span></span><br></pre></td></tr></table></figure>
 <p><code>Control + B</code> 可插入Markdown语法。<br>效果如下：</p>
